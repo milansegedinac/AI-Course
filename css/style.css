@@ -122,16 +122,20 @@ main {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   margin-bottom: 1.25rem;
+  cursor: pointer;
 }
 
 .part-intro { border-top: 3px solid var(--blue); }
-.part-intro h3 { color: var(--blue); }
+.part-intro h3 .section-label { color: var(--blue); opacity: 0.8; }
+.part-intro h3 .section-title { color: #6490b0; margin-left: 0.5em; }
 
 .part-1 { border-top: 3px solid var(--pink); }
-.part-1 h3 { color: var(--pink); }
+.part-1 h3 .section-label { color: var(--pink); opacity: 0.8; }
+.part-1 h3 .section-title { color: #b06070; margin-left: 0.5em; }
 
 .part-2 { border-top: 3px solid var(--green); }
-.part-2 h3 { color: var(--green); }
+.part-2 h3 .section-label { color: var(--green); opacity: 0.8; }
+.part-2 h3 .section-title { color: #6ea050; margin-left: 0.5em; }
 
 /* ── Session lists ──────────────────────────────── */
 
