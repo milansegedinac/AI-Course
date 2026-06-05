@@ -10,7 +10,10 @@ function openSession(btn) {
   btn.setAttribute('aria-expanded', 'true');
   body.style.maxHeight = body.scrollHeight + 'px';
   body.addEventListener('transitionend', () => {
-    if (btn.getAttribute('aria-expanded') === 'true') body.style.maxHeight = 'none';
+    if (btn.getAttribute('aria-expanded') === 'true') {
+      body.style.maxHeight = 'none';
+      btn.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }, { once: true });
 }
 
