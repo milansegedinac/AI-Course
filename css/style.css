@@ -1,0 +1,278 @@
+:root {
+  --blue:       #4a90d9;
+  --pink:       #d9486a;
+  --green:      #6abf40;
+
+  --bg:         #111113;
+  --surface:    #2a2a30;
+  --border:     #333338;
+  --text:       #e8e8ea;
+  --text-muted: #888892;
+  --line:       #666672;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'IBM Plex Mono', monospace;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ── Layout ─────────────────────────────────────── */
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+/* ── Language switcher ──────────────────────────── */
+
+.lang-switcher {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.lang-switcher button {
+  padding: 0.3rem 1rem;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.lang-switcher button:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+/* ── Curriculum heading ─────────────────────────── */
+
+#curriculum h2 {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  margin-bottom: 2.5rem;
+  background: linear-gradient(90deg, var(--blue), var(--pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Tree layout ────────────────────────────────── */
+
+.tree {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+/* Root row — centered, constrained width */
+.tree-root-row {
+  width: 100%;
+  max-width: 480px;
+}
+
+/* ── Connector (lines drawn by js/tree.js) ──────── */
+
+.tree-connector {
+  width: 100%;
+  height: 3rem;
+}
+
+/* ── Children row ───────────────────────────────── */
+
+.tree-children {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  align-items: start;
+}
+
+/* ── Cards ──────────────────────────────────────── */
+
+.curriculum-part {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 1.75rem 2rem;
+}
+
+.curriculum-part h3 {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+.part-intro { border-top: 3px solid var(--blue); }
+.part-intro h3 { color: var(--blue); }
+
+.part-1 { border-top: 3px solid var(--pink); }
+.part-1 h3 { color: var(--pink); }
+
+.part-2 { border-top: 3px solid var(--green); }
+.part-2 h3 { color: var(--green); }
+
+/* ── Session lists ──────────────────────────────── */
+
+.curriculum-part ol {
+  list-style: none;
+  padding: 0;
+  counter-reset: session;
+}
+
+.part-intro ol {
+  counter-reset: session -1;
+}
+
+.curriculum-part ol[start="8"] {
+  counter-reset: session 7;
+}
+
+.curriculum-part li {
+  counter-increment: session;
+  border-bottom: 1px solid var(--border);
+}
+
+.curriculum-part li:last-child {
+  border-bottom: none;
+}
+
+/* ── Session header (clickable row) ─────────────── */
+
+.session-header {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  width: 100%;
+  padding: 0.6rem 0;
+  background: none;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+  text-align: left;
+  font-size: 0.92rem;
+  font-family: inherit;
+}
+
+.session-header:hover {
+  color: #fff;
+}
+
+/* Session number via counter */
+.session-header::before {
+  content: counter(session, decimal-leading-zero);
+  font-size: 0.92rem;
+  font-weight: 700;
+  min-width: 2ch;
+  flex-shrink: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.part-intro .session-header::before { color: var(--blue);  opacity: 0.8; }
+.part-1     .session-header::before { color: var(--pink);  opacity: 0.8; }
+.part-2     .session-header::before { color: var(--green); opacity: 0.8; }
+
+/* ── Session body (collapsible) ─────────────────── */
+
+.session-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.session-body p {
+  padding: 0.5rem 0 1rem calc(2ch + 0.9rem);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* ── Mobile layout (≤ 700px) ────────────────────── */
+
+@media (max-width: 700px) {
+  main {
+    padding: 2rem 1rem;
+  }
+
+  /* Hide SVG connector — replaced by left-spine line */
+  .tree-connector {
+    display: none;
+  }
+
+  /* Stack all three cards vertically */
+  .tree {
+    align-items: stretch;
+    position: relative;
+    padding-left: 1.5rem;
+  }
+
+  .tree-root-row {
+    max-width: 100%;
+  }
+
+  .tree-children {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  /* Vertical spine on the left — bottom set by JS via --spine-bottom */
+  .tree::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: var(--spine-top, 50%);
+    bottom: var(--spine-bottom, 50%);
+    width: 2px;
+    background: var(--line);
+  }
+
+  /* Horizontal ticks — centered on each card */
+  .part-intro::before,
+  .part-1::before,
+  .part-2::before {
+    content: '';
+    position: absolute;
+    left: calc(-1.5rem - 3px);
+    top: 50%;
+    transform: translateY(-1px);
+    width: 1.5rem;
+    height: 2px;
+    background: var(--line);
+  }
+
+  .tree-root-row,
+  .curriculum-part {
+    position: relative;
+    margin-bottom: 1.5rem;
+  }
+
+  .curriculum-part:last-child {
+    margin-bottom: 0;
+  }
+
+  /* On mobile use left accent border instead of top */
+  .part-intro { border-top: 1px solid var(--border); border-left: 3px solid var(--blue); }
+  .part-1     { border-top: 1px solid var(--border); border-left: 3px solid var(--pink); }
+  .part-2     { border-top: 1px solid var(--border); border-left: 3px solid var(--green); }
+}

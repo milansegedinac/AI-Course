@@ -1,0 +1,25 @@
+{
+  "curriculum": {
+    "heading": "Curriculum",
+    "part1": {
+      "title": "What AI Is",
+      "session1": "Session 1: Learning from data: Introduction to AI and machine learning",
+      "session2": "Session 2: Working with tabular data: prediction models",
+      "session3": "Session 3: AI-driven reasoning: Neural networks",
+      "session4": "Session 4: Generating and interpreting natural language using AI: LLMs",
+      "session5": "Session 5: Handling visual information: Applied computer vision",
+      "session6": "Session 6: From content to actions: AI-driven architectures and agents",
+      "session7": "Session 7: Putting AI solutions in production: ML ops and administrative issues"
+    },
+    "part2": {
+      "title": "How AI Works",
+      "session8": "Session 8: Exploratory data analysis",
+      "session9": "Session 9: Predictive AI models in practice",
+      "session10": "Session 10: Utilizing computer vision models",
+      "session11": "Session 11: Using Large Language models",
+      "session12": "Session 12: Building AI agents",
+      "session13": "Session 13: Kick-starting \"grand slam project candidates\"",
+      "session14": "Session 14: Setting up solution and AI architecture for \"grand slam project candidates\""
+    }
+  }
+}

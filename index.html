@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Course</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@700;900&family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="lang-switcher">
+    <button onclick="setLanguage('en')">EN</button>
+    <button onclick="setLanguage('sr')">SR</button>
+  </nav>
+
+  <main>
+    <section id="curriculum">
+      <h2 data-i18n="curriculum.heading"></h2>
+
+      <div class="tree">
+
+        <div class="tree-root-row">
+          <div class="curriculum-part part-intro">
+            <h3 data-i18n="curriculum.part0.title"></h3>
+            <ol>
+              <li>
+                <button class="session-header" aria-expanded="false">
+                  <span data-i18n="curriculum.part0.session0"></span>
+                  
+                </button>
+                <div class="session-body"><p data-i18n="curriculum.part0.session0_content"></p></div>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="tree-connector" aria-hidden="true"></div>
+
+        <div class="tree-children">
+
+          <div class="curriculum-part part-1">
+            <h3 data-i18n="curriculum.part1.title"></h3>
+            <ol>
+              <li>
+                <button class="session-header" aria-expanded="false">
+                  <span data-i18n="curriculum.part1.session1"></span>
+                  
+                </button>
+                <div class="session-body"><p data-i18n="curriculum.part1.session1_content"></p></div>
+              </li>
+              <li>
+                <button class="session-header" aria-expanded="false">
+                  <span data-i18n="curriculum.part1.session2"></span>
+                  
+                </button>
+                <div class="session-body"><p data-i18n="curriculum.part1.session2_content"></p></div>
+              </li>
+              <li>
+                <button class="session-header" aria-expanded="false">
+                  <span data-i18n="curriculum.part1.session3"></span>
+                  
+                </button>
+                <div class="session-body"><p data-i18n="curriculum.part1.session3_content"></p></div>
+              </li>
+              <li>
+                <button class="session-header" aria-expanded="false">
+                  <span data-i18n="curriculum.part1.session4"></span>
+                  
+                </button>
+                <div class="session-body"><p data-i18n="curriculum.part1.session4_content"></p></div>
+              </li>
+              <li>
+                <button class="session-header" aria-expanded="false">
+                  <span data-i18n="curriculum.part1.session5"></span>
+                  
+                </button>
+                <div class="session-body"><p data-i18n="curriculum.part1.session5_content"></p></div>
+              </li>
+              <li>
+                <button class="session-header" aria-expanded="false">
+                  <span data-i18n="curriculum.part1.session6"></span>
+                  
+                </button>
+                <div class="session-body"><p data-i18n="curriculum.part1.session6_content"></p></div>
+              </li>
+              <li>
+                <button class="session-header" aria-expanded="false">
+                  <span data-i18n="curriculum.part1.session7"></span>
+                  
+                </button>
+                <div class="session-body"><p data-i18n="curriculum.part1.session7_content"></p></div>
+              </li>
+            </ol>
+          </div>
+
+          <div class="curriculum-part part-2">
+            <h3 data-i18n="curriculum.part2.title"></h3>
+            <ol start="8">
+              <li>
+                <button class="session-header" aria-expanded="false">
+                  <span data-i18n="curriculum.part2.session8"></span>
+                  
+                </button>
+                <div class="session-body"><p data-i18n="curriculum.part2.session8_content"></p></div>
+              </li>
+              <li>
+                <button class="session-header" aria-expanded="false">
+                  <span data-i18n="curriculum.part2.session9"></span>
+                  
+                </button>
+                <div class="session-body"><p data-i18n="curriculum.part2.session9_content"></p></div>
+              </li>
+              <li>
+                <button class="session-header" aria-expanded="false">
+                  <span data-i18n="curriculum.part2.session10"></span>
+                  
+                </button>
+                <div class="session-body"><p data-i18n="curriculum.part2.session10_content"></p></div>
+              </li>
+              <li>
+                <button class="session-header" aria-expanded="false">
+                  <span data-i18n="curriculum.part2.session11"></span>
+                  
+                </button>
+                <div class="session-body"><p data-i18n="curriculum.part2.session11_content"></p></div>
+              </li>
+              <li>
+                <button class="session-header" aria-expanded="false">
+                  <span data-i18n="curriculum.part2.session12"></span>
+                  
+                </button>
+                <div class="session-body"><p data-i18n="curriculum.part2.session12_content"></p></div>
+              </li>
+              <li>
+                <button class="session-header" aria-expanded="false">
+                  <span data-i18n="curriculum.part2.session13"></span>
+                  
+                </button>
+                <div class="session-body"><p data-i18n="curriculum.part2.session13_content"></p></div>
+              </li>
+              <li>
+                <button class="session-header" aria-expanded="false">
+                  <span data-i18n="curriculum.part2.session14"></span>
+                  
+                </button>
+                <div class="session-body"><p data-i18n="curriculum.part2.session14_content"></p></div>
+              </li>
+            </ol>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/tree.js"></script>
+  <script src="js/accordion.js"></script>
+</body>
+</html>

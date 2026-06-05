@@ -1,0 +1,25 @@
+{
+  "curriculum": {
+    "heading": "Kurikulum",
+    "part1": {
+      "title": "Šta AI jeste",
+      "session1": "Sesija 1: Učenje iz podataka: Uvod u AI i mašinsko učenje",
+      "session2": "Sesija 2: Rad sa tabelarnim podacima: modeli predviđanja",
+      "session3": "Sesija 3: AI-vođeno rezonovanje: Neuronske mreže",
+      "session4": "Sesija 4: Generisanje i interpretacija prirodnog jezika pomoću AI: LLM-ovi",
+      "session5": "Sesija 5: Obrada vizuelnih informacija: Primenjena kompjuterska vizija",
+      "session6": "Sesija 6: Od sadržaja do akcija: AI-vođene arhitekture i agenti",
+      "session7": "Sesija 7: Postavljanje AI rešenja u produkciju: ML ops i administrativna pitanja"
+    },
+    "part2": {
+      "title": "Kako AI radi",
+      "session8": "Sesija 8: Eksplorativna analiza podataka",
+      "session9": "Sesija 9: Prediktivni AI modeli u praksi",
+      "session10": "Sesija 10: Korišćenje modela kompjuterske vizije",
+      "session11": "Sesija 11: Korišćenje velikih jezičkih modela",
+      "session12": "Sesija 12: Izgradnja AI agenata",
+      "session13": "Sesija 13: Pokretanje kandidata za \"grand slam projekat\"",
+      "session14": "Sesija 14: Postavljanje rešenja i AI arhitekture za kandidate za \"grand slam projekat\""
+    }
+  }
+}
