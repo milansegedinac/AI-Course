@@ -1,4 +1,8 @@
 window.__translations__ = {
+  "hero": {
+    "title": "AI Course",
+    "subtitle": "A practical guide to artificial intelligence and machine learning"
+  },
   "curriculum": {
     "heading": "Curriculum",
     "part0": {
@@ -13,7 +17,7 @@ window.__translations__ = {
       "session1": "Learning from data: Introduction to AI and machine learning",
       "session1_content": "Through simple analogies from everyday life, such as fruit recognition, children's games, and cooking, attendees learn basic concepts and principles without complex programming. The lecture is divided into three key sections. The first section explains what machine learning is, its definition, and the difference compared to traditional programming. The second section provides an overview of the types of machine learning, covering supervised, unsupervised, and reinforcement learning in detail, along with an interactive quiz to check knowledge. The third section describes the workflow of a project, guiding attendees through all phases of ML model development—from defining the problem, through data collection and cleaning, all the way to training and evaluation using a practical example of a movie recommendation system.",
       "session2": "Working with tabular data: prediction models",
-      "session2_content": "",
+      "session2_content": "In this lesson, participants are introduced to the practical process of applying machine learning and the methodology of working with real-world datasets, viewed through the lens of engineering practice in the Python programming language. The lecture covers the exploratory data analysis phase, utilizing the Pandas library to load structured tables from remote sources, inspect table structures, and interpret descriptive statistics parameters to understand data distribution and value ranges. The step of data transformation and feature engineering is analyzed in detail, focusing on domain-specific data adaptation through the conversion of surface area measurement units and the preparation of data into the appropriate matrix format of multidimensional arrays. The course also encompasses the modeling process within the Scikit-learn library—from isolating dependent and independent variables, through instantiating a linear regression object, to launching the model training process—culminating in a practical introduction to predicting real estate prices based on square footage.",
       "session3": "AI-driven reasoning: Neural networks",
       "session3_content": "Participants are introduced to the fundamentals of deep learning and the mathematical concepts behind model training, viewed through intuitive analogies and engineering practice. The lecture covers the geometric interpretation of linear functions and the role of derivatives as indicators of the direction and intensity of error correction, explaining how they are used to adjust weights and biases. The anatomy of an artificial neuron and the architecture of the Multilayer Perceptron (MLP) are analyzed in detail, focusing on forward propagation, backward propagation, and parameter optimization via gradient descent. The course also covers key hyperparameters and practical challenges, ranging from loss functions, epochs, and batch sizes, to the analysis of activation functions (ReLU, Sigmoid, Tanh, Softmax), and techniques for addressing vanishing and exploding gradients, culminating in a practical implementation of MNIST dataset classification using the Keras framework.",
       "session4": "Generating and interpreting natural language using AI: LLMs",

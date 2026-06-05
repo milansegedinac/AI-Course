@@ -11,10 +11,17 @@
 </head>
 <body>
 
-  <nav class="lang-switcher">
-    <button onclick="setLanguage('en')">EN</button>
-    <button onclick="setLanguage('sr')">SR</button>
-  </nav>
+  <header class="hero">
+    <div class="hero-overlay"></div>
+    <nav class="lang-switcher">
+      <button onclick="setLanguage('en')">EN</button>
+      <button onclick="setLanguage('sr')">SR</button>
+    </nav>
+    <div class="hero-content">
+      <h1 data-i18n="hero.title"></h1>
+      <p data-i18n="hero.subtitle"></p>
+    </div>
+  </header>
 
   <main>
     <section id="curriculum">
