@@ -336,6 +336,12 @@ main {
   .part-2     { border-top: 1px solid var(--border); border-left: 3px solid var(--green); }
 }
 
+/* ── Course Setup ───────────────────────────────── */
+
+#course-setup {
+  border-top: 1px solid var(--border);
+}
+
 /* ── About Us ───────────────────────────────────── */
 
 #about {
@@ -361,10 +367,9 @@ main {
   background-clip: text;
 }
 
-#about p {
+.about-inner p {
   color: var(--text-muted);
   font-size: 0.95rem;
   line-height: 1.8;
-  max-width: 720px;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
