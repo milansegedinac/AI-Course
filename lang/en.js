@@ -48,8 +48,37 @@ window.__translations__ = {
       "session14_content": "Students begin the final phase of the course's practical realization by laying the foundations of their final solutions. The lecture covers the operationalization of the theoretical and architectural conclusions reached during the previous session, transforming concepts into concrete engineering blueprints. The process of initial setup and configuration of the overall system AI architecture is analyzed in detail, defining the connections between models, databases, and the application interface. The session concludes with launching and initializing the implementation of the selected projects, where students, with mentorship support, begin writing production-ready code and establishing their first operational prototypes."
     }
   },
+  "contact": {
+    "heading": "Contact",
+    "infoTitle": "Get in touch",
+    "infoDesc": "Have questions about the course? Feel free to contact us via the form or directly.",
+    "partner": "In collaboration with FTN Novi Sad",
+    "form": {
+      "name": "Full name",
+      "namePlaceholder": "Your full name",
+      "email": "Email address",
+      "company": "Company",
+      "companyPlaceholder": "Company name (optional)",
+      "message": "Message",
+      "messagePlaceholder": "Your message or question...",
+      "submit": "Send application"
+    }
+  },
+  "cta": {
+    "label": "Investment in your career",
+    "amount": "1000",
+    "currency": " EUR",
+    "note": "Participants use their own laptops for practical exercises",
+    "button": "Apply today"
+  },
   "courseSetup": {
   "heading": "Course Organization",
+    "cards": {
+      "what":    { "title": "What is the course", "body": "The course covers AI and ML concepts that are becoming indispensable in solving software problems. The goal is to gain an understanding of AI concepts and adopt techniques for their use so you can integrate AI into information systems and problem-solving." },
+      "who":     { "title": "Who is the course for", "body": "For people who work in software development but are not familiar with AI, ML, and have not built software solutions based on artificial intelligence." },
+      "notWhat": { "title": "What the course is not", "body": "This is not a course on using AI tools for faster development. The focus is on understanding and implementing AI solutions." },
+      "notWho":  { "title": "Who it is not for", "body": "For those who already know ML algorithms and use ML models, RAG, agents, and LLMs in their solutions. The course is designed for beginners in the AI domain who want to build solid foundations." }
+    },
     "p1": "The course consists of 15 sessions held in the evening, with the workload and commitment fully tailored to employed participants. The course lasts for 2 months. Each session lasts 3 hours, and since the work is highly practical, participants are required to bring their own laptops to class.",
     "p2": "The first, introductory session provides a clear insight into the application of artificial intelligence in production-ready software and tracks the evolution and implementation of AI techniques through a real-world FinTech application example. The remaining sessions are split into two specialized modules.",
     "p3": "The first module is designed for participants to acquire a deep and intuitive understanding of the problems solved by artificial intelligence, as well as the techniques utilized in the process. During this section, all significant theoretical aspects and mathematical foundations of modern AI models are discussed in detail.",

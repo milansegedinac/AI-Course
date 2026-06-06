@@ -8,6 +8,17 @@ function applyTranslations(translations) {
     const value = key.split('.').reduce((obj, k) => obj && obj[k], translations);
     if (value !== undefined) el.textContent = value;
   });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    const value = key.split('.').reduce((obj, k) => obj && obj[k], translations);
+    if (value !== undefined) el.placeholder = value;
+  });
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  alert('Hvala na prijavi! Kontaktiraćemo vas uskoro.');
+  event.target.reset();
 }
 
 function setLanguage(lang) {

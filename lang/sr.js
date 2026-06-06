@@ -48,8 +48,37 @@ window.__translations__ = {
       "session14_content": "Polaznici započinju finalnu fazu praktične realizacije kursa kroz postavljanje temelja svojih završnih rešenja. Predavanje pokriva operacionalizaciju teorijskih i arhitektonskih zaključaka donetih tokom prethodne sesije, transformišući koncepte u konkretne inženjerske planove. Detaljno se analizira proces inicijalnog postavljanja i konfiguracije celokupne AI arhitekture sistema, definišući veze između modela, baza podataka i aplikativnog interfejsa. Rad obuhvata pokretanje i inicijalizaciju same implementacije izabranih projekata, gde polaznici, uz mentorsku podršku, započinju pisanje produkcionog koda i postavljanje prvih operativnih prototipova."
     }
   },
+  "contact": {
+    "heading": "Kontakt",
+    "infoTitle": "Kontaktirajte nas",
+    "infoDesc": "Imate pitanja o kursu? Slobodno nas kontaktirajte putem forme ili direktno.",
+    "partner": "U saradnji sa FTN Novi Sad",
+    "form": {
+      "name": "Ime i prezime",
+      "namePlaceholder": "Vaše ime i prezime",
+      "email": "Email adresa",
+      "company": "Kompanija",
+      "companyPlaceholder": "Naziv kompanije (opciono)",
+      "message": "Poruka",
+      "messagePlaceholder": "Vaša poruka ili pitanje...",
+      "submit": "Pošaljite prijavu"
+    }
+  },
+  "cta": {
+    "label": "Investicija u vašu karijeru",
+    "amount": "1000",
+    "currency": " EUR",
+    "note": "Polaznici koriste svoje laptopove za praktične vežbe",
+    "button": "Prijavite se danas"
+  },
   "courseSetup": {
     "heading": "Organizacija kursa",
+    "cards": {
+      "what":    { "title": "Šta je kurs", "body": "Kurs se bavi AI i ML konceptima koji postaju neizostavni u rešavanju softverskih problema. Cilj je sticanje razumevanja AI koncepata i usvajanje tehnika njihove upotrebe tako da možete AI integrisati u informacione sisteme i rešavanje problema." },
+      "who":     { "title": "Za koga je kurs", "body": "Za ljude koji se bave razvojem softvera, ali ne poznaju AI, ML i nisu pravili softverska rešenja zasnovana na veštačkoj inteligenciji." },
+      "notWhat": { "title": "Šta kurs nije", "body": "Ovo nije kurs korišćenja AI alata za brži development. Fokus je na razumevanju i implementaciji AI rešenja." },
+      "notWho":  { "title": "Za koga nije", "body": "Za one koji već poznaju ML algoritme, koriste ML modele, RAG, agente i LLM u svojim rešenjima. Kurs je dizajniran za početnike u AI domenu koji žele da steknu solidne osnove." }
+    },
     "p1": "Kurs čini 15 termina koji se odvijaju u večernjim časovima i koji su po obimu i angažmanu prilagođeni zaposlenim polaznicima. Kurs traje 2 meseca. Termini traju po 3 sata, a pošto je rad visoko praktičan, potrebno je da polaznici na nastavu nose svoje laptop računare.",
     "p2": "Prvi, uvodni termin daje jasan uvid u primenu veštačke inteligencije u produkcionim aplikacijama i prati evoluciju i uvođenje AI tehnika kroz primer jedne realne FinTech aplikacije. Preostali termini podeljeni su u dva specijalizovana modula.",
     "p3": "Prvi modul je namenjen tome da polaznici steknu duboko i intuitivno razumevanje problema koji se rešavaju pomoću veštačke inteligencije, kao i tehnika koje se pri tome koriste. Tokom ovog dela, detaljno se diskutuju svi značajni teorijski aspekti i matematičke osnove savremenih AI modela.",
