@@ -118,17 +118,6 @@ main {
 
 /* ── Curriculum heading ─────────────────────────── */
 
-#curriculum h2 {
-  font-family: 'Exo 2', sans-serif;
-  font-size: 2rem;
-  font-weight: 900;
-  letter-spacing: -0.02em;
-  margin-bottom: 2.5rem;
-  background: linear-gradient(90deg, var(--blue), var(--pink));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
 
 /* ── Tree layout ────────────────────────────────── */
 
@@ -340,16 +329,13 @@ main {
 
 #cta {
   border-top: 1px solid var(--border);
-  padding-bottom: 3rem;
 }
 
-.cta-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 1.75rem 2rem;
+.cta-card {
   background: var(--surface);
   border: 1px solid var(--border);
   border-top: 3px solid var(--blue);
+  padding: 1.75rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -359,37 +345,44 @@ main {
 
 .cta-label {
   font-family: 'Exo 2', sans-serif;
-  font-size: 0.72rem;
+  font-size: 1.05rem;
   font-weight: 700;
-  text-transform: uppercase;
   letter-spacing: 0.12em;
+  text-transform: uppercase;
   color: var(--blue);
   margin-bottom: 0.5rem;
 }
 
+.cta-note {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.cta-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
 .cta-price {
   font-family: 'Exo 2', sans-serif;
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: 900;
   color: var(--text);
   line-height: 1;
   letter-spacing: -0.03em;
-  margin-bottom: 0.4rem;
 }
 
 .cta-currency {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 400;
-  letter-spacing: 0;
-  margin-left: 0.25rem;
-}
-
-.cta-note {
-  font-size: 0.85rem;
-  color: var(--text-muted);
+  margin-left: 0.2rem;
 }
 
 .cta-btn {
+  display: inline-block;
   padding: 0.75rem 2rem;
   background: transparent;
   color: var(--blue);
@@ -410,10 +403,64 @@ main {
 /* ── Info Card Grid ─────────────────────────────── */
 
 .info-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-direction: column;
   gap: 1.25rem;
   margin-bottom: 2.5rem;
+}
+
+.info-top-row {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  gap: 1.25rem;
+  padding-top: 2.5rem;
+}
+
+/* ∩ arch connector above */
+.info-top-row::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 33.33%;
+  right: 16.67%;
+  height: 2.5rem;
+  border-top: 2px solid var(--line);
+  border-left: 2px solid var(--line);
+  border-right: 2px solid var(--line);
+}
+
+.info-top-row .info-card--main {
+  flex: 2;
+  align-self: stretch;
+  height: auto;
+}
+
+.info-top-row .info-card:not(.info-card--main) {
+  flex: 1;
+  align-self: stretch;
+  height: auto;
+}
+
+.info-bottom-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1.25rem;
+  padding-bottom: 2.5rem;
+  align-items: stretch;
+}
+
+.info-bottom-row::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 16.67%;
+  right: 33.33%;
+  height: 2.5rem;
+  border-bottom: 2px solid var(--line);
+  border-left: 2px solid var(--line);
+  border-right: 2px solid var(--line);
 }
 
 .info-card {
@@ -422,16 +469,22 @@ main {
   border-top: 3px solid var(--blue);
   padding: 1.75rem;
   transition: border-color 0.2s;
+  height: 100%;
 }
 
 .info-card:hover {
   border-color: var(--blue);
 }
 
-.info-card--main {
-  grid-column: span 2;
-  border-top-color: var(--blue);
+.info-card--green {
+  border-top-color: var(--green);
 }
+
+.info-card--green:hover {
+  border-color: var(--green);
+}
+
+.info-card--green h3 { color: var(--green); }
 
 .info-card--negative {
   border-top-color: var(--pink);
@@ -441,21 +494,18 @@ main {
   border-color: var(--pink);
 }
 
-.info-card--wide {
-  grid-column: span 2;
-}
-
 .info-card h3 {
   font-family: 'Exo 2', sans-serif;
   font-size: 1.05rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--text);
+  color: var(--blue);
   margin-bottom: 0.6rem;
 }
 
 .info-card--main h3 { color: var(--blue); }
+.info-card--green h3 { color: var(--green); }
 .info-card--negative h3 { color: var(--pink); }
 
 .info-card p {
@@ -466,12 +516,62 @@ main {
 }
 
 @media (max-width: 700px) {
-  .info-grid {
-    grid-template-columns: 1fr;
+  .info-top-row .info-card {
+    border-top: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+    border-left: 3px solid var(--blue);
   }
-  .info-card--main,
-  .info-card--wide {
-    grid-column: span 1;
+  .info-top-row .info-card--green {
+    border-left-color: var(--green);
+  }
+  .info-top-row .info-card--negative {
+    border-left-color: var(--pink);
+  }
+  .info-bottom-row .info-card {
+    border-top: 1px solid var(--border);
+    border-left: 1px solid var(--border);
+    border-right: 3px solid var(--blue);
+  }
+  .info-bottom-row .info-card--negative {
+    border-right-color: var(--pink);
+  }
+  .info-top-row {
+    flex-direction: column;
+    align-items: stretch;
+    padding-top: 0;
+    padding-left: 1.5rem;
+  }
+  .info-top-row::before {
+    top: 25%;
+    bottom: 25%;
+    left: 0;
+    right: auto;
+    width: 1.5rem;
+    height: auto;
+    border: none;
+    border-top: 2px solid var(--line);
+    border-left: 2px solid var(--line);
+    border-bottom: 2px solid var(--line);
+    background: transparent;
+  }
+  .info-bottom-row {
+    grid-template-columns: 1fr;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 1.5rem;
+  }
+  .info-bottom-row::after {
+    top: 25%;
+    bottom: 25%;
+    right: 0;
+    left: auto;
+    width: 1.5rem;
+    height: auto;
+    border: none;
+    border-top: 2px solid var(--line);
+    border-right: 2px solid var(--line);
+    border-bottom: 2px solid var(--line);
+    background: transparent;
   }
 }
 
@@ -479,6 +579,20 @@ main {
 
 #course-setup {
   border-top: 1px solid var(--border);
+}
+
+.section-heading {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  margin-bottom: 2.5rem;
+  color: var(--text);
+  text-align: left;
+}
+
+.cta-inner .section-heading {
+  text-align: center;
 }
 
 /* ── About Us ───────────────────────────────────── */
@@ -491,7 +605,7 @@ main {
 .about-inner {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 4rem 1.5rem;
+  padding: 4rem 1.5rem 0.5rem;
 }
 
 #about h2 {

@@ -4,7 +4,7 @@ window.__translations__ = {
     "subtitle": "A practical guide to artificial intelligence and machine learning"
   },
   "curriculum": {
-    "heading": "Curriculum",
+    "heading": "Lessons",
     "part0": {
       "label": "Intro",
       "title": "What Can AI Do?",
@@ -74,10 +74,10 @@ window.__translations__ = {
   "courseSetup": {
   "heading": "Course Organization",
     "cards": {
-      "what":    { "title": "What is the course", "body": "The course covers AI and ML concepts that are becoming indispensable in solving software problems. The goal is to gain an understanding of AI concepts and adopt techniques for their use so you can integrate AI into information systems and problem-solving." },
-      "who":     { "title": "Who is the course for", "body": "For people who work in software development but are not familiar with AI, ML, and have not built software solutions based on artificial intelligence." },
-      "notWhat": { "title": "What the course is not", "body": "This is not a course on using AI tools for faster development. The focus is on understanding and implementing AI solutions." },
-      "notWho":  { "title": "Who it is not for", "body": "For those who already know ML algorithms and use ML models, RAG, agents, and LLMs in their solutions. The course is designed for beginners in the AI domain who want to build solid foundations." }
+      "what":    { "title": "What is the course?", "body": "The course covers AI and ML concepts that are becoming indispensable in solving software problems. The goal is to gain an understanding of AI concepts and adopt techniques for their use so you can integrate AI into information systems and problem-solving." },
+      "who":     { "title": "Who is the course for?", "body": "For people who work in software development but are not familiar with AI, ML, and have not built software solutions based on artificial intelligence." },
+      "notWhat": { "title": "What the course is not?", "body": "This is not a course on using AI tools for faster development. The focus is on understanding and implementing AI solutions." },
+      "notWho":  { "title": "Who it is not for?", "body": "For those who already know ML algorithms and use ML models, RAG, agents, and LLMs in their solutions. The course is designed for beginners in the AI domain who want to build solid foundations." }
     },
     "p1": "The course consists of 15 sessions held in the evening, with the workload and commitment fully tailored to employed participants. The course lasts for 2 months. Each session lasts 3 hours, and since the work is highly practical, participants are required to bring their own laptops to class.",
     "p2": "The first, introductory session provides a clear insight into the application of artificial intelligence in production-ready software and tracks the evolution and implementation of AI techniques through a real-world FinTech application example. The remaining sessions are split into two specialized modules.",

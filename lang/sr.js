@@ -4,7 +4,7 @@ window.__translations__ = {
     "subtitle": "Praktičan vodič kroz veštačku inteligenciju i mašinsko učenje"
   },
   "curriculum": {
-    "heading": "Kurikulum",
+    "heading": "Lekcije",
     "part0": {
       "label": "Uvod",
       "title": "Šta AI može?",
@@ -74,10 +74,10 @@ window.__translations__ = {
   "courseSetup": {
     "heading": "Organizacija kursa",
     "cards": {
-      "what":    { "title": "Šta je kurs", "body": "Kurs se bavi AI i ML konceptima koji postaju neizostavni u rešavanju softverskih problema. Cilj je sticanje razumevanja AI koncepata i usvajanje tehnika njihove upotrebe tako da možete AI integrisati u informacione sisteme i rešavanje problema." },
-      "who":     { "title": "Za koga je kurs", "body": "Za ljude koji se bave razvojem softvera, ali ne poznaju AI, ML i nisu pravili softverska rešenja zasnovana na veštačkoj inteligenciji." },
-      "notWhat": { "title": "Šta kurs nije", "body": "Ovo nije kurs korišćenja AI alata za brži development. Fokus je na razumevanju i implementaciji AI rešenja." },
-      "notWho":  { "title": "Za koga nije", "body": "Za one koji već poznaju ML algoritme, koriste ML modele, RAG, agente i LLM u svojim rešenjima. Kurs je dizajniran za početnike u AI domenu koji žele da steknu solidne osnove." }
+      "what":    { "title": "Šta je kurs?", "body": "Kurs se bavi AI i ML konceptima koji postaju neizostavni u rešavanju softverskih problema. Cilj je sticanje razumevanja AI koncepata i usvajanje tehnika njihove upotrebe tako da možete AI integrisati u informacione sisteme i rešavanje problema." },
+      "who":     { "title": "Za koga je kurs?", "body": "Za ljude koji se bave razvojem softvera, ali ne poznaju AI, ML i nisu pravili softverska rešenja zasnovana na veštačkoj inteligenciji." },
+      "notWhat": { "title": "Šta kurs nije?", "body": "Ovo nije kurs korišćenja AI alata za brži development. Fokus je na razumevanju i implementaciji AI rešenja." },
+      "notWho":  { "title": "Za koga nije?", "body": "Za one koji već poznaju ML algoritme, koriste ML modele, RAG, agente i LLM u svojim rešenjima. Kurs je dizajniran za početnike u AI domenu koji žele da steknu solidne osnove." }
     },
     "p1": "Kurs čini 15 termina koji se odvijaju u večernjim časovima i koji su po obimu i angažmanu prilagođeni zaposlenim polaznicima. Kurs traje 2 meseca. Termini traju po 3 sata, a pošto je rad visoko praktičan, potrebno je da polaznici na nastavu nose svoje laptop računare.",
     "p2": "Prvi, uvodni termin daje jasan uvid u primenu veštačke inteligencije u produkcionim aplikacijama i prati evoluciju i uvođenje AI tehnika kroz primer jedne realne FinTech aplikacije. Preostali termini podeljeni su u dva specijalizovana modula.",

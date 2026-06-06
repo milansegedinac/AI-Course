@@ -25,24 +25,28 @@
 
   <section id="course-setup">
     <div class="about-inner">
-      <h2 data-i18n="courseSetup.heading"></h2>
+      <h2 class="section-heading" data-i18n="courseSetup.heading"></h2>
 
       <div class="info-grid">
-        <div class="info-card info-card--main">
-          <h3 data-i18n="courseSetup.cards.what.title"></h3>
-          <p data-i18n="courseSetup.cards.what.body"></p>
+        <div class="info-top-row">
+          <div class="info-card info-card--main">
+            <h3 data-i18n="courseSetup.cards.what.title"></h3>
+            <p data-i18n="courseSetup.cards.what.body"></p>
+          </div>
+          <div class="info-card info-card--green">
+            <h3 data-i18n="courseSetup.cards.who.title"></h3>
+            <p data-i18n="courseSetup.cards.who.body"></p>
+          </div>
         </div>
-        <div class="info-card">
-          <h3 data-i18n="courseSetup.cards.who.title"></h3>
-          <p data-i18n="courseSetup.cards.who.body"></p>
-        </div>
-        <div class="info-card info-card--negative">
-          <h3 data-i18n="courseSetup.cards.notWhat.title"></h3>
-          <p data-i18n="courseSetup.cards.notWhat.body"></p>
-        </div>
-        <div class="info-card info-card--negative info-card--wide">
-          <h3 data-i18n="courseSetup.cards.notWho.title"></h3>
-          <p data-i18n="courseSetup.cards.notWho.body"></p>
+        <div class="info-bottom-row">
+          <div class="info-card info-card--negative">
+            <h3 data-i18n="courseSetup.cards.notWhat.title"></h3>
+            <p data-i18n="courseSetup.cards.notWhat.body"></p>
+          </div>
+          <div class="info-card info-card--wide">
+            <h3 data-i18n="courseSetup.cards.notWho.title"></h3>
+            <p data-i18n="courseSetup.cards.notWho.body"></p>
+          </div>
         </div>
       </div>
 
@@ -52,6 +56,7 @@
 
   <main>
     <section id="curriculum">
+      <h2 class="section-heading" data-i18n="curriculum.heading"></h2>
       <div class="tree">
 
         <div class="tree-root-row">
@@ -198,13 +203,17 @@
   </main>
 
   <section id="cta">
-    <div class="cta-inner">
-      <div class="cta-left">
-        <p class="cta-label" data-i18n="cta.label"></p>
-        <div class="cta-price"><span data-i18n="cta.amount"></span><span class="cta-currency" data-i18n="cta.currency"></span></div>
-        <p class="cta-note" data-i18n="cta.note"></p>
+    <div class="about-inner">
+      <div class="cta-card">
+        <div class="cta-left">
+          <h3 class="cta-label" data-i18n="cta.label"></h3>
+          <p class="cta-note" data-i18n="cta.note"></p>
+        </div>
+        <div class="cta-right">
+          <div class="cta-price"><span data-i18n="cta.amount"></span><span class="cta-currency" data-i18n="cta.currency"></span></div>
+          <a href="#kontakt" class="cta-btn" data-i18n="cta.button"></a>
+        </div>
       </div>
-      <a href="#kontakt" class="cta-btn" data-i18n="cta.button"></a>
     </div>
   </section>
 
