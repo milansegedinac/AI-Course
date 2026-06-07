@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Course — Sokraft &amp; FTN Novi Sad</title>
+  <meta name="description" content="A hands-on AI engineering course covering machine learning, neural networks, LLMs, and autonomous AI agents." />
+
+  <!-- Fonts — Barlow Condensed ≈ roc-grotesk-condensed, Playfair Display ≈ Larken, Barlow ≈ roc-grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500;600&family=Playfair+Display:ital,wght@1,400;1,700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <span class="nav-logo-sokraft">Sokraft</span>
+        <span class="nav-logo-sep">&nbsp;×&nbsp;</span>
+        <span class="nav-logo-ftn">FTN Novi Sad</span>
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="#about" class="nav-link" data-i18n="nav.about">About</a>
+        <a href="#setup" class="nav-link" data-i18n="nav.setup">Course</a>
+        <a href="#lessons" class="nav-link" data-i18n="nav.lessons">Lessons</a>
+        <a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
+        <a href="#contact" class="nav-link nav-cta" data-i18n="nav.cta">Apply</a>
+      </div>
+      <div class="nav-controls">
+        <div class="lang-switcher">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <span class="lang-sep">/</span>
+          <button class="lang-btn" data-lang="sr">SR</button>
+        </div>
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero-section" id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-tag" data-i18n="hero.tag">Sokraft &amp; FTN Novi Sad</div>
+      <h1 class="hero-heading">
+        <span class="hero-bold" data-i18n="hero.title.bold">Master AI.</span>
+        <br />
+        <span class="hero-italic" data-i18n="hero.title.italic">Build Real Systems.</span>
+      </h1>
+      <p class="hero-sub" data-i18n="hero.subtitle">A hands-on engineering course covering machine learning, neural networks, LLMs, and autonomous AI agents — taught by researchers with 15+ years of production AI experience.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary" data-i18n="hero.cta">Apply today</a>
+        <a href="#lessons" class="btn btn-ghost" data-i18n="hero.cta2">View curriculum</a>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator">
+      <span></span>
+    </div>
+  </section>
+
+  <!-- ===== STATS BAR ===== -->
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div class="stat-item">
+        <span class="stat-num">15</span>
+        <span class="stat-label">Sessions</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-num">2</span>
+        <span class="stat-label">Modules</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-num">2</span>
+        <span class="stat-label">Months</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-num">3h</span>
+        <span class="stat-label">Per session</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-num">FTN</span>
+        <span class="stat-label">Novi Sad</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== COURSE SETUP — dark services-style section ===== -->
+  <section class="section-dark" id="setup">
+    <div class="dark-split">
+      <!-- Left: black box with course info -->
+      <div class="dark-left">
+        <p class="dark-category" data-i18n="courseSetup.heading">Course Organization</p>
+        <div class="dark-heading-wrap">
+          <h2 class="h1-hero-bold white" data-i18n="courseSetup.cards.what.title">What is the<br/>course?</h2>
+          <h2 class="h1-hero-italic white" data-i18n="courseSetup.cards.who.title">Who is it for?</h2>
+        </div>
+        <div class="dark-cards">
+          <div class="dark-card">
+            <h4 class="dark-card-title" data-i18n="courseSetup.cards.what.title">What is the course?</h4>
+            <p class="dark-card-body" data-i18n="courseSetup.cards.what.body">The course covers AI and ML concepts that are becoming indispensable in solving software problems.</p>
+          </div>
+          <div class="dark-card">
+            <h4 class="dark-card-title" data-i18n="courseSetup.cards.who.title">Who is it for?</h4>
+            <p class="dark-card-body" data-i18n="courseSetup.cards.who.body">For people who work in software development but are not familiar with AI, ML, and have not built software solutions based on artificial intelligence.</p>
+          </div>
+          <div class="dark-card dark-card-alt">
+            <h4 class="dark-card-title" data-i18n="courseSetup.cards.notWhat.title">What the course is not?</h4>
+            <p class="dark-card-body" data-i18n="courseSetup.cards.notWhat.body">This is not a course on using AI tools for faster development. The focus is on understanding and implementing AI solutions.</p>
+          </div>
+          <div class="dark-card dark-card-alt">
+            <h4 class="dark-card-title" data-i18n="courseSetup.cards.notWho.title">Who it is not for?</h4>
+            <p class="dark-card-body" data-i18n="courseSetup.cards.notWho.body">For those who already know ML algorithms and use ML models, RAG, agents, and LLMs in their solutions.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Right: gradient box with description -->
+      <div class="dark-right">
+        <div class="dark-right-content">
+          <p class="dark-right-body" data-i18n="courseSetup.p1"></p>
+          <p class="dark-right-body" data-i18n="courseSetup.p2"></p>
+          <p class="dark-right-body" data-i18n="courseSetup.p3"></p>
+          <p class="dark-right-body" data-i18n="courseSetup.p4"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LESSONS / CURRICULUM ===== -->
+  <section class="section-lessons" id="lessons">
+    <div class="section-container">
+      <div class="lessons-header">
+        <h2 class="section-label" data-i18n="curriculum.heading">Lessons</h2>
+        <div class="lessons-title-row">
+          <span class="h1-hero-bold" data-i18n="lessons.titleBold">The</span>
+          <span class="h1-hero-italic lessons-italic" data-i18n="lessons.titleItalic">Curriculum</span>
+        </div>
+      </div>
+
+      <!-- Part 0: Intro -->
+      <div class="curriculum-part">
+        <div class="part-label-row">
+          <span class="part-tag" data-i18n="curriculum.part0.label">Intro</span>
+          <h3 class="part-title" data-i18n="curriculum.part0.title">What Can AI Do?</h3>
+        </div>
+        <div class="sessions-list">
+          <div class="session-item">
+            <button class="session-header" aria-expanded="false">
+              <span class="session-number">00</span>
+              <span class="session-title" data-i18n="curriculum.part0.session0">Introductory lecture: ML and AI agents</span>
+              <span class="session-toggle">+</span>
+            </button>
+            <div class="session-body">
+              <p data-i18n="curriculum.part0.session0_content"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Part 1: Module 1 -->
+      <div class="curriculum-part">
+        <div class="part-label-row">
+          <span class="part-tag" data-i18n="curriculum.part1.label">Module 1</span>
+          <h3 class="part-title" data-i18n="curriculum.part1.title">What AI Is?</h3>
+        </div>
+        <div class="sessions-list">
+          <div class="session-item">
+            <button class="session-header" aria-expanded="false">
+              <span class="session-number">01</span>
+              <span class="session-title" data-i18n="curriculum.part1.session1">Learning from data: Introduction to AI and machine learning</span>
+              <span class="session-toggle">+</span>
+            </button>
+            <div class="session-body">
+              <p data-i18n="curriculum.part1.session1_content"></p>
+            </div>
+          </div>
+          <div class="session-item">
+            <button class="session-header" aria-expanded="false">
+              <span class="session-number">02</span>
+              <span class="session-title" data-i18n="curriculum.part1.session2">Working with tabular data: prediction models</span>
+              <span class="session-toggle">+</span>
+            </button>
+            <div class="session-body">
+              <p data-i18n="curriculum.part1.session2_content"></p>
+            </div>
+          </div>
+          <div class="session-item">
+            <button class="session-header" aria-expanded="false">
+              <span class="session-number">03</span>
+              <span class="session-title" data-i18n="curriculum.part1.session3">AI-driven reasoning: Neural networks</span>
+              <span class="session-toggle">+</span>
+            </button>
+            <div class="session-body">
+              <p data-i18n="curriculum.part1.session3_content"></p>
+            </div>
+          </div>
+          <div class="session-item">
+            <button class="session-header" aria-expanded="false">
+              <span class="session-number">04</span>
+              <span class="session-title" data-i18n="curriculum.part1.session4">Generating and interpreting natural language using AI: LLMs</span>
+              <span class="session-toggle">+</span>
+            </button>
+            <div class="session-body">
+              <p data-i18n="curriculum.part1.session4_content"></p>
+            </div>
+          </div>
+          <div class="session-item">
+            <button class="session-header" aria-expanded="false">
+              <span class="session-number">05</span>
+              <span class="session-title" data-i18n="curriculum.part1.session5">Handling visual information: Applied computer vision</span>
+              <span class="session-toggle">+</span>
+            </button>
+            <div class="session-body">
+              <p data-i18n="curriculum.part1.session5_content"></p>
+            </div>
+          </div>
+          <div class="session-item">
+            <button class="session-header" aria-expanded="false">
+              <span class="session-number">06</span>
+              <span class="session-title" data-i18n="curriculum.part1.session6">From content to actions: AI-driven architectures and agents</span>
+              <span class="session-toggle">+</span>
+            </button>
+            <div class="session-body">
+              <p data-i18n="curriculum.part1.session6_content"></p>
+            </div>
+          </div>
+          <div class="session-item">
+            <button class="session-header" aria-expanded="false">
+              <span class="session-number">07</span>
+              <span class="session-title" data-i18n="curriculum.part1.session7">Putting AI solutions in production: ML ops and administrative issues</span>
+              <span class="session-toggle">+</span>
+            </button>
+            <div class="session-body">
+              <p data-i18n="curriculum.part1.session7_content"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Part 2: Module 2 -->
+      <div class="curriculum-part">
+        <div class="part-label-row">
+          <span class="part-tag" data-i18n="curriculum.part2.label">Module 2</span>
+          <h3 class="part-title" data-i18n="curriculum.part2.title">How AI Works?</h3>
+        </div>
+        <div class="sessions-list">
+          <div class="session-item">
+            <button class="session-header" aria-expanded="false">
+              <span class="session-number">08</span>
+              <span class="session-title" data-i18n="curriculum.part2.session8">Exploratory data analysis</span>
+              <span class="session-toggle">+</span>
+            </button>
+            <div class="session-body">
+              <p data-i18n="curriculum.part2.session8_content"></p>
+            </div>
+          </div>
+          <div class="session-item">
+            <button class="session-header" aria-expanded="false">
+              <span class="session-number">09</span>
+              <span class="session-title" data-i18n="curriculum.part2.session9">Predictive AI models in practice</span>
+              <span class="session-toggle">+</span>
+            </button>
+            <div class="session-body">
+              <p data-i18n="curriculum.part2.session9_content"></p>
+            </div>
+          </div>
+          <div class="session-item">
+            <button class="session-header" aria-expanded="false">
+              <span class="session-number">10</span>
+              <span class="session-title" data-i18n="curriculum.part2.session10">Utilizing computer vision models</span>
+              <span class="session-toggle">+</span>
+            </button>
+            <div class="session-body">
+              <p data-i18n="curriculum.part2.session10_content"></p>
+            </div>
+          </div>
+          <div class="session-item">
+            <button class="session-header" aria-expanded="false">
+              <span class="session-number">11</span>
+              <span class="session-title" data-i18n="curriculum.part2.session11">Using Large Language models</span>
+              <span class="session-toggle">+</span>
+            </button>
+            <div class="session-body">
+              <p data-i18n="curriculum.part2.session11_content"></p>
+            </div>
+          </div>
+          <div class="session-item">
+            <button class="session-header" aria-expanded="false">
+              <span class="session-number">12</span>
+              <span class="session-title" data-i18n="curriculum.part2.session12">Building AI agents</span>
+              <span class="session-toggle">+</span>
+            </button>
+            <div class="session-body">
+              <p data-i18n="curriculum.part2.session12_content"></p>
+            </div>
+          </div>
+          <div class="session-item">
+            <button class="session-header" aria-expanded="false">
+              <span class="session-number">13</span>
+              <span class="session-title" data-i18n="curriculum.part2.session13">Kick-starting "grand slam project candidates"</span>
+              <span class="session-toggle">+</span>
+            </button>
+            <div class="session-body">
+              <p data-i18n="curriculum.part2.session13_content"></p>
+            </div>
+          </div>
+          <div class="session-item">
+            <button class="session-header" aria-expanded="false">
+              <span class="session-number">14</span>
+              <span class="session-title" data-i18n="curriculum.part2.session14">Setting up solution and AI architecture for "grand slam project candidates"</span>
+              <span class="session-toggle">+</span>
+            </button>
+            <div class="session-body">
+              <p data-i18n="curriculum.part2.session14_content"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== APPLY / PRICING ===== -->
+  <section class="section-apply" id="apply">
+    <div class="apply-inner">
+      <div class="apply-left">
+        <p class="apply-label" data-i18n="apply.heading">Invest in your future</p>
+        <div class="apply-price-row">
+          <span class="apply-price" data-i18n="apply.amount">1500</span>
+          <span class="apply-currency" data-i18n="apply.currency"> EUR</span>
+        </div>
+        <p class="apply-note" data-i18n="apply.note">Participants work on their own laptops</p>
+        <a href="#contact" class="btn btn-yellow" data-i18n="apply.button">Apply now</a>
+      </div>
+      <div class="apply-right">
+        <div class="apply-features">
+          <div class="apply-feature">
+            <span class="apply-feature-icon">→</span>
+            <span data-i18n="courseSetup.p1"></span>
+          </div>
+          <div class="apply-feature">
+            <span class="apply-feature-icon">→</span>
+            <span data-i18n="courseSetup.p5"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT / WHO ARE WE ===== -->
+  <section class="section-about" id="about">
+    <div class="section-container">
+      <div class="about-layout">
+        <div class="about-left">
+          <span class="section-label" data-i18n="about.heading">Who are we?</span>
+          <h2 class="about-heading">
+            <span class="h1-hero-bold">15+ years</span>
+            <br />
+            <span class="h1-hero-italic">of production AI</span>
+          </h2>
+        </div>
+        <div class="about-right">
+          <p data-i18n="about.p1"></p>
+          <p data-i18n="about.p2"></p>
+        </div>
+      </div>
+      <!-- Workshop photo -->
+      <div class="about-photo-wrap">
+        <img src="img/workshop.jpg" alt="Sokraft AI Workshop" class="about-photo" />
+        <div class="about-photo-caption">One of our previous AI workshops — Novi Sad</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="section-contact" id="contact">
+    <div class="contact-split">
+      <!-- Left: form -->
+      <div class="contact-left">
+        <span class="section-label" data-i18n="contact.heading">Contact</span>
+        <h2 class="contact-heading">
+          <span class="h1-hero-bold white" data-i18n="contact.infoTitle">Get in touch</span>
+        </h2>
+        <p class="contact-desc" data-i18n="contact.infoDesc">Have questions about the course? Feel free to contact us via the form or directly.</p>
+        <p class="contact-partner" data-i18n="contact.partner">In collaboration with FTN Novi Sad</p>
+        <form class="contact-form" id="contact-form" novalidate>
+          <div class="form-group">
+            <label data-i18n="contact.form.name">Full name</label>
+            <input type="text" name="name" data-i18n-placeholder="contact.form.namePlaceholder" placeholder="Your full name" required />
+          </div>
+          <div class="form-group">
+            <label data-i18n="contact.form.email">Email address</label>
+            <input type="email" name="email" placeholder="email@example.com" required />
+          </div>
+          <div class="form-group">
+            <label data-i18n="contact.form.company">Company</label>
+            <input type="text" name="company" data-i18n-placeholder="contact.form.companyPlaceholder" placeholder="Company name (optional)" />
+          </div>
+          <div class="form-group">
+            <label data-i18n="contact.form.message">Message</label>
+            <textarea name="message" rows="4" data-i18n-placeholder="contact.form.messagePlaceholder" placeholder="Your message or question..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" data-i18n="contact.form.submit">Send application</button>
+        </form>
+      </div>
+      <!-- Right: gradient visual -->
+      <div class="contact-right">
+        <div class="contact-right-visual">
+          <div class="contact-gradient-orb"></div>
+          <div class="contact-tagline">
+            <span class="h1-hero-bold white">Join</span>
+            <br />
+            <span class="h1-hero-italic white">the next cohort</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo">Sokraft × FTN Novi Sad</span>
+        <p class="footer-tagline">AI Engineering Course</p>
+      </div>
+      <div class="footer-links">
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#setup" data-i18n="nav.setup">Course</a>
+        <a href="#lessons" data-i18n="nav.lessons">Lessons</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </div>
+      <div class="footer-copy">
+        <p>© 2025 Sokraft. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- i18n + main JS -->
+  <script src="lang/en.js"></script>
+  <script src="lang/sr.js" id="sr-lang" data-loaded="false"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
