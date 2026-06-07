@@ -164,7 +164,12 @@ h2 {
 /* ── Hero ────────────────────────────────────────── */
 
 #hero {
-  background: var(--black);
+  background-color: var(--black);
+  background-image:
+    linear-gradient(rgba(10,10,10,0.82), rgba(10,10,10,0.82)),
+    url('https://images.unsplash.com/photo-1766898588916-71f3f68f60ab?w=1920&q=80&fit=crop');
+  background-size: cover;
+  background-position: center;
   color: var(--white);
   border-bottom: var(--border);
   position: relative;
@@ -177,7 +182,7 @@ h2 {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: 0;
+  z-index: 1;
 }
 
 .hero-inner {
@@ -663,11 +668,20 @@ footer {
     grid-template-columns: 1fr;
   }
 
+  .info-card--wide {
+    grid-column: span 1;
+  }
+
   .tree-children {
     grid-template-columns: 1fr;
   }
 
   .tree-connector { display: none; }
+
+  .tree-root-row {
+    max-width: 100%;
+    margin-bottom: 1.25rem;
+  }
 
   .contact-grid {
     grid-template-columns: 1fr;
