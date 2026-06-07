@@ -95,6 +95,13 @@ window.__translations__ = {
     "p4": "The second module covers the direct application of artificial intelligence techniques in real-world software solutions. In this module, the emphasis is placed on engineering practice—modeling AI services and successfully incorporating them into stable, production environments.",
     "p5": "The total price of the course is 1500 Euros."
   },
+  "apply": {
+    "heading": "Invest in your future",
+    "note": "Participants work on their own laptops",
+    "amount": "1500",
+    "currency": " EUR",
+    "button": "Apply now"
+  },
   "about": {
     "heading": "Who are we?",
     "p1": "We are Sokraft, a software company from Novi Sad, founded and led by professors from the Faculty of Technical Sciences. We have been working in the field of artificial intelligence since 2009, a track record backed by over 50 scientific papers we have published in the AI domain. Alongside our academic careers, we are actively engaged in commercial software development, having successfully participated in the realization of over 30 commercial projects, a large portion of which involves AI. Between 2015 and 2022, through our educational company Aleph, we organized web programming courses. Hundreds of participants passed through our workshops and successfully launched their careers, securing jobs in the IT sector. Back then, it was the golden age of web programming, and without a solid grasp of web technologies, serious development was virtually impossible. Today, we find ourselves at a similar historical crossroads: we are witnessing that practically all modern projects require operational knowledge of artificial intelligence. Once again, there is a massive gap in the market: although AI is bringing fundamental changes, there are currently no comprehensive courses that properly cover both the theoretical foundations and the real-world practical applications of modern AI to enable participants to productively join new projects. We created this course with the goal of directly addressing the challenge of the shortage of qualified AI engineers, passing on knowledge that bridges the rigor of academic research and hands-on engineering practice.",
