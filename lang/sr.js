@@ -1,7 +1,17 @@
 window.__translations__ = {
+  "nav": {
+    "about":   "O nama",
+    "setup":   "Kurs",
+    "lessons": "Lekcije",
+    "contact": "Kontakt",
+    "cta":     "Prijavi se"
+  },
   "hero": {
-    "title": "AI Kurs",
-    "subtitle": "Praktičan vodič kroz veštačku inteligenciju i mašinsko učenje"
+    "tag":      "Sokraft & FTN Novi Sad",
+    "title":    "Savladaj AI.\nPravi sisteme.",
+    "subtitle": "Praktičan inženjerski kurs koji pokriva mašinsko učenje, neuronske mreže, LLM-ove i autonomne AI agente — predaju istraživači sa 15+ godina iskustva u produkcionoj primeni AI.",
+    "cta":      "Prijavite se danas",
+    "cta2":     "Pogledaj kurikulum"
   },
   "curriculum": {
     "heading": "Lekcije",
