@@ -423,6 +423,15 @@ img { display: block; max-width: 100%; }
   text-transform: uppercase;
   color: rgba(255,255,255,0.5);
 }
+.stat-item-icon {
+  width: 14px;
+  height: 14px;
+  color: var(--indigo);
+  opacity: 0.6;
+  flex-shrink: 0;
+  margin-bottom: 4px;
+}
+
 .stat-bullets {
   list-style: none;
   padding: 0;
