@@ -57,11 +57,7 @@ function switchLang(lang) {
 document.addEventListener('DOMContentLoaded', () => {
 
   // 1. Set initial lang
-  if (currentLang === 'sr') {
-    loadSR(() => applyTranslations('sr'));
-  } else {
-    applyTranslations('en');
-  }
+  applyTranslations(currentLang);
 
   // 2. Lang switcher buttons
   document.querySelectorAll('.lang-btn').forEach(btn => {
