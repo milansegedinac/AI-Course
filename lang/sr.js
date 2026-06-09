@@ -12,8 +12,7 @@ window.__translations__ = {
       "bold":   "Primenjena",
       "italic": "veštačka inteligencija"
     },
-    "tagline":  "Razvoj realnih AI aplikacija",
-    "subtitle": "Praktičan inženjerski kurs koji pokriva temeljne koncepte veštačke inteligencije i mašinskog učenja, neuronske mreže, velike jezičke modele i AI agente. Kurs vode profesori sa FTN sa 15+ godina iskustva u podučavanju i realnoj primeni AI.",
+"subtitle": "Praktičan inženjerski kurs koji pokriva temeljne koncepte veštačke inteligencije i mašinskog učenja, neuronske mreže, velike jezičke modele i AI agente. Kurs vode profesori sa FTN sa 15+ godina iskustva u podučavanju i realnoj primeni AI.",
     "cta":      "Prijavi se danas",
     "cta2":     "Pogledaj kurikulum"
   },
