@@ -8,7 +8,11 @@ window.__translations__ = {
   },
   "hero": {
     "tag":      "Sokraft & FTN Novi Sad",
-    "title":    "Master AI.\nBuild Real Systems.",
+    "title": {
+      "bold":   "Master AI.",
+      "italic": "Build Real Systems."
+    },
+    "tagline":  "Real engineering skills for production AI",
     "subtitle": "A hands-on engineering course covering machine learning, neural networks, LLMs, and autonomous AI agents — taught by researchers with 15+ years of production AI experience.",
     "cta":      "Apply today",
     "cta2":     "View curriculum"
