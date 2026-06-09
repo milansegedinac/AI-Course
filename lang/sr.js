@@ -17,10 +17,10 @@ window.__translations__ = {
     "cta2":     "Pogledaj kurikulum"
   },
   "stats": {
-    "sessions": { "num": "12",           "label": "Termina",              "sub": "8 lekcija + 4 projektna" },
+    "sessions": { "num": "12", "label": "Termina", "bullet1": "8 Lekcija", "bullet2": "4 Projektna termina" },
     "duration": { "num": "2h",           "label": "Trajanje termina" },
     "months":   { "num": "2",            "label": "Meseca" },
-    "start":    { "num": "Jesen 2026.",  "label": "Početak sledećeg kursa" },
+    "start":    { "num": "Jesen 2026",  "label": "Početak sledećeg kursa" },
     "price":    { "num": "1150€",        "label": "Cena kursa" }
   },
   "curriculum": {
