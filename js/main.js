@@ -5,16 +5,14 @@
 
 // ---- i18n ----
 
-const LANGS = { en: null, sr: null };
-
-// en.js already ran (sync script tag above), capturing window.__translations__
-LANGS.en = window.__translations__;
+// Both lang files loaded synchronously in index.html,
+// captured into isolated globals before each overwrites window.__translations__
+const LANGS = {
+  en: window.__i18n_en__,
+  sr: window.__i18n_sr__
+};
 
 let currentLang = localStorage.getItem('ai-course-lang') || 'en';
-
-function getTranslations(lang) {
-  return LANGS[lang] || LANGS.en;
-}
 
 function flatGet(obj, key) {
   const parts = key.split('.');
@@ -27,7 +25,7 @@ function flatGet(obj, key) {
 }
 
 function applyTranslations(lang) {
-  const t = getTranslations(lang);
+  const t = LANGS[lang] || LANGS.en;
   if (!t) return;
 
   document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -45,33 +43,13 @@ function applyTranslations(lang) {
   document.documentElement.lang = lang;
 }
 
-function loadSR(callback) {
-  if (LANGS.sr) { callback(); return; }
-  // Dynamically load sr.js
-  const s = document.createElement('script');
-  s.src = 'lang/sr.js';
-  s.onload = () => {
-    LANGS.sr = window.__translations__;
-    // Restore en from cache
-    window.__translations__ = LANGS.en;
-    callback();
-  };
-  document.head.appendChild(s);
-}
-
 function switchLang(lang) {
   currentLang = lang;
   localStorage.setItem('ai-course-lang', lang);
-
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.lang === lang);
   });
-
-  if (lang === 'sr') {
-    loadSR(() => applyTranslations('sr'));
-  } else {
-    applyTranslations('en');
-  }
+  applyTranslations(lang);
 }
 
 // ---- INIT ----
