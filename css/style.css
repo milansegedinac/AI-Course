@@ -423,6 +423,12 @@ img { display: block; max-width: 100%; }
   text-transform: uppercase;
   color: rgba(255,255,255,0.5);
 }
+.stat-sub {
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  color: rgba(255,255,255,0.28);
+  margin-top: 2px;
+}
 .stat-divider {
   width: 1px;
   background: rgba(255,255,255,0.1);

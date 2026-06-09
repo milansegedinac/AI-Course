@@ -16,6 +16,13 @@ window.__translations__ = {
     "cta":      "Apply today",
     "cta2":     "View curriculum"
   },
+  "stats": {
+    "sessions": { "num": "12",        "label": "Sessions",     "sub": "8 lessons + 4 project" },
+    "duration": { "num": "2h",        "label": "Per session" },
+    "months":   { "num": "2",         "label": "Months" },
+    "start":    { "num": "Fall 2026", "label": "Next cohort" },
+    "price":    { "num": "1150€",     "label": "Course price" }
+  },
   "curriculum": {
     "heading": "Lessons",
     "part0": {
