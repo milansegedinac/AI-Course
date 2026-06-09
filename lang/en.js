@@ -17,7 +17,7 @@ window.__translations__ = {
     "cta2":     "View curriculum"
   },
   "stats": {
-    "sessions": { "num": "14", "label": "Sessions", "bullet1": "10 Lessons", "bullet2": "4 Project sessions" },
+    "sessions": { "num": "14", "label": "Sessions" },
     "duration": { "num": "2h",        "label": "Per session" },
     "months":   { "num": "2",         "label": "Months" },
     "start":    { "num": "Fall 2026", "label": "Next cohort" },
