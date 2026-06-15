@@ -12,7 +12,7 @@ window.__translations__ = {
       "bold":   "Master AI.",
       "italic": "Build Real Systems."
     },
-"subtitle": "A hands-on engineering course covering machine learning, neural networks, LLMs, and autonomous AI agents — taught by researchers with 15+ years of production AI experience.",
+"subtitle": "A hands-on engineering course covering the fundamental concepts of artificial intelligence and their application in modern software applications. The course covers machine learning, neural networks, large language models, and AI agents — taught by professors from FTN with 15+ years of experience in teaching and real-world AI.",
     "cta":      "Apply today",
     "cta2":     "View curriculum"
   },
