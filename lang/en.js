@@ -1,35 +1,79 @@
 window.__translations__ = {
+  "meta": {
+    "title": "AI Course — Sokraft × FTN Novi Sad",
+    "description": "A hands-on AI engineering course covering machine learning, neural networks, LLMs, and autonomous AI agents."
+  },
   "nav": {
-    "about":   "About",
-    "setup":   "Course",
+    "about": "About",
+    "setup": "Course",
     "lessons": "Lessons",
     "contact": "Contact",
-    "cta":     "Apply"
+    "cta": "Apply"
   },
   "hero": {
-    "tag":      "Sokraft & FTN Novi Sad",
+    "tag": "Sokraft × FTN Novi Sad",
     "title": {
-      "bold":   "Master AI.",
+      "bold": "Master AI.",
       "italic": "Build Real Systems."
     },
-"subtitle": "A hands-on engineering course covering the fundamental concepts of artificial intelligence and their application in modern software applications. The course covers machine learning, neural networks, large language models, and AI agents — taught by professors from FTN with 15+ years of experience in teaching and real-world AI.",
-    "cta":      "Apply today",
-    "cta2":     "View curriculum"
+    "subtitle": "A hands-on engineering course covering the fundamental concepts of artificial intelligence and their application in modern software applications — machine learning, neural networks, large language models, and AI agents. Taught by professors from FTN with 15+ years of experience in teaching and real-world AI.",
+    "cta": "Apply today",
+    "cta2": "View curriculum",
+    "ticker": "Machine Learning  •  Neural Networks  •  Computer Vision  •  Large Language Models  •  RAG & MCP  •  AI Agents  •  Project Work "
+  },
+  "interests": {
+    "heading": "What are you interested in?",
+    "subheading": "Select all that apply",
+    "options": {
+      "ml": "Machine Learning",
+      "nn": "Neural Networks",
+      "llm": "LLM & RAG",
+      "agents": "AI Agents"
+    },
+    "empty": "Click to select the areas you're interested in above.",
+    "prefix": "You're interested in:",
+    "cta": "Apply now",
+    "messageTemplate": "I'm interested in: {list}."
   },
   "stats": {
     "sessions": { "num": "14", "label": "Sessions" },
-    "duration": { "num": "2h",        "label": "Per session" },
-    "months":   { "num": "2",         "label": "Months" },
-    "start":    { "num": "Fall 2026", "label": "Next cohort" },
-    "price":    { "num": "1200€",     "label": "Course price" }
+    "duration": { "num": "2h", "label": "Per session" },
+    "months": { "num": "~2", "label": "Months" },
+    "start": { "num": "Fall 2026", "label": "Next cohort" },
+    "price": { "num": "1200 €", "label": "Course price" }
+  },
+  "courseSetup": {
+    "heading": "Course Organization",
+    "title": {
+      "bold": "How",
+      "italic": "the course works"
+    },
+    "group1": {
+      "title": "What is the course?",
+      "pos": "The course covers AI and ML concepts that are becoming indispensable in solving software problems. The goal is to gain an understanding of AI concepts and adopt techniques for their use so you can integrate AI into real software systems.",
+      "neg": "This is not a course on using AI coding assistants for faster software development. The focus is on understanding, implementing, and applying artificial intelligence techniques."
+    },
+    "group2": {
+      "title": "Who is the course for?",
+      "pos": "The course is intended for people who work in software development but are not familiar with AI and have not built software solutions that apply artificial intelligence.",
+      "neg": "The course is not intended for those who already know ML algorithms, use ML models, RAG systems, and implement LLM agents in their solutions."
+    },
+    "p1": "The course consists of 14 sessions held in the evening, with the workload and commitment tailored to employed participants. The course lasts about two months, and each session lasts 2 hours. Participants work on their own laptops.",
+    "p2": "The first, introductory session presents the course content and provides a clear insight into the application of artificial intelligence in production applications, tracing the evolution and adoption of AI techniques through a real-world FinTech application example. The remaining sessions are split into two specialized modules.",
+    "p3": "The first module is designed for participants to acquire a deep and intuitive understanding of the problems solved by artificial intelligence, as well as the techniques used in the process. Significant theoretical, practical, and mathematical foundations of modern AI models are discussed in detail.",
+    "p4": "The second module covers the direct application of artificial intelligence techniques in software solutions through hands-on project work. Participants work in teams, and sessions are dedicated to guiding them through the ideation and realization of their project solutions."
   },
   "curriculum": {
     "heading": "Lessons",
+    "title": {
+      "bold": "The",
+      "italic": "Curriculum"
+    },
     "part0": {
       "label": "Intro",
       "title": "What Can AI Do?",
       "session0": "Introductory lecture: ML and AI agents",
-      "session0_content": "Through the analysis of a real-world FinTech system for loan application processing, participants trace the evolution of information systems—from classic digitalization, through the integration of AI services, to the introduction of intelligent agents. The lecture focuses on the specific problems that artificial intelligence solves, providing a clear motivation for introducing each individual technique. The first section analyzes traditional web systems, mapping out the processes where employees are still forced to manually perform reasoning tasks and process unstructured data. The second section introduces AI services (such as computer vision, machine learning, and LLMs) to automate specific tasks, explaining their advantages as well as their limitations regarding business process rigidity. The third section presents the transition to systems based on intelligent agents and orchestrators that manage the process flow declaratively. By positioning AI tools within the continuum of digitalization, participants gain a broader perspective and a solid conceptual framework for understanding advanced techniques in the remainder of the course."
+      "session0_content": "Through the analysis of a real-world FinTech system for loan application processing, participants trace the evolution of information systems — from classic digitalization, through the integration of AI services, to the introduction of intelligent agents. The lecture focuses on the specific problems that artificial intelligence solves, providing a clear motivation for introducing each individual technique. The first section analyzes traditional web systems, mapping out the processes where employees are still forced to manually perform reasoning tasks and process unstructured data. The second section introduces AI services (such as computer vision, machine learning, and LLMs) to automate specific tasks, explaining their advantages as well as their limitations regarding business process rigidity. The third section presents the transition to systems based on intelligent agents and orchestrators that manage the process flow declaratively. By positioning AI tools within the continuum of digitalization, participants gain a broader perspective and a solid conceptual framework for understanding advanced techniques in the remainder of the course."
     },
     "part1": {
       "label": "Module 1",
@@ -51,7 +95,7 @@ window.__translations__ = {
       "session8": "From content to actions: AI-driven architectures and agents. Team formation and project task presentation.",
       "session8_content": "Students are introduced to the role and integration of AI models within the architectures of real-world, production applications. The lecture covers the process of embedding a trained model into a web service and the mechanisms for accessing its functionalities via a REST API. The challenges of asynchronous access in high-load systems are analyzed in detail, alongside the necessity of introducing message queues for secure and reliable inter-service communication, with a specific focus on orchestrating multiple isolated AI services into complex business workflows. The session concludes with team formation and the presentation of project tasks that participants will develop throughout the second module.",
       "session9": "Test",
-      "session9_content": "Participants are introduced to the role and integration of AI models within the architectures of real-world, production applications. The lecture covers the process of embedding a trained model into a web service and the mechanisms for accessing its functionalities via a REST API. It analyzes the challenge of asynchronous access in high-load systems, as well as the need for introducing message queues for secure and reliable inter-service communication, with a specific focus on orchestrating multiple isolated AI services into complex business workflows. The session also covers the transition to the concept of intelligent agents. At the end of the session, teams are formed and project tasks are presented for development in the second module."
+      "session9_content": "This session is dedicated to assessing the knowledge gained during the first module, through a written test covering material from the introductory lecture up to the previous session. The test result serves as a foundation for the project work carried out in the second module."
     },
     "part2": {
       "label": "Module 2",
@@ -66,57 +110,42 @@ window.__translations__ = {
       "session13_content": "The final session of the course is dedicated to the presentation and evaluation of project solutions. Participants present their applications and instructors provide comments and grades."
     }
   },
+  "about": {
+    "heading": "Who are we?",
+    "title": {
+      "bold": "15+ years",
+      "italic": "of production AI"
+    },
+    "p1a": "We are Sokraft, a software company from Novi Sad, led by professors from the Faculty of Technical Sciences. We have been working in the field of artificial intelligence for over 15 years, a track record backed by more than 50 scientific papers we have published in the AI domain. Alongside our research, we are actively engaged in commercial software development, having successfully participated in the realization of over 30 commercial projects, a large portion of which involves AI.",
+    "p1b": "Through our educational company Aleph, we organized web programming courses where hundreds of participants successfully launched their careers and secured jobs in the IT sector.",
+    "p1c": "Just as knowledge of web technologies was essential for serious development during the boom of web programming, today we are witnessing that practically all modern IT projects require operational knowledge of artificial intelligence. That is why we designed this course, which covers both the theoretical foundations and the real-world practical applications of modern AI, equipping participants to productively join new projects.",
+    "p2": "The course is intended for participants who already have prior programming experience. It is designed as an intensive program built to elevate participants' existing engineering skills to the level required for building modern AI solutions."
+  },
   "contact": {
     "heading": "Contact",
     "infoTitle": "Get in touch",
     "infoDesc": "Have questions about the course? Feel free to contact us via the form or directly.",
     "partner": "In collaboration with FTN Novi Sad",
+    "join": {
+      "bold": "Join",
+      "italic": "the next cohort"
+    },
     "form": {
       "name": "Full name",
       "namePlaceholder": "Your full name",
       "email": "Email address",
+      "emailPlaceholder": "email@example.com",
       "company": "Company",
       "companyPlaceholder": "Company name (optional)",
       "message": "Message",
       "messagePlaceholder": "Your message or question...",
-      "submit": "Send application"
+      "submit": "Send application",
+      "sending": "Sending...",
+      "success": "Thank you! Your application has been recorded — we'll be in touch soon."
     }
   },
-  "cta": {
-    "label": "Investment in your career",
-    "amount": "1000",
-    "currency": " EUR",
-    "note": "Participants use their own laptops for practical exercises",
-    "button": "Apply today"
-  },
-  "courseSetup": {
-    "heading": "Course Organization",
-    "group1": {
-      "title": "What is the course?",
-      "pos": "The course covers AI and ML concepts that are becoming indispensable in solving software problems. The goal is to gain an understanding of AI concepts and adopt techniques for their use so you can integrate AI into real software systems.",
-      "neg": "This is not a course on using AI coding assistants for faster software development. The focus is on understanding, implementing, and applying artificial intelligence techniques."
-    },
-    "group2": {
-      "title": "Who is the course for?",
-      "pos": "The course is intended for people who work in software development but are not familiar with AI and have not built software solutions that apply artificial intelligence.",
-      "neg": "The course is not intended for those who already know ML algorithms, use ML models, RAG systems, and implement LLM agents in their solutions."
-    },
-    "p1": "The course consists of 14 sessions held in the evening, with the workload and commitment fully tailored to employed participants. The course lasts 2.5 months. Each session lasts 2 hours. Participants work on their own laptops.",
-    "p2": "The first, introductory session presents the course content and provides a clear insight into the application of artificial intelligence in production applications, tracing the evolution and adoption of AI techniques through a real-world FinTech application example. The remaining sessions are split into two specialized modules.",
-    "p3": "The first module is designed for participants to acquire a deep and intuitive understanding of the problems solved by artificial intelligence, as well as the techniques utilized in the process. During this section, significant theoretical, practical, and mathematical foundations of modern AI models are discussed in detail.",
-    "p4": "The second module covers the direct application of artificial intelligence techniques in software solutions through hands-on project work. In this module, participants work in teams, and the sessions are dedicated to guiding them through the ideation and realization of their project solutions.",
-    "p5": "The total price of the course is 1500 Euros."
-  },
-  "apply": {
-    "heading": "Invest in your future",
-    "note": "Participants work on their own laptops",
-    "amount": "1500",
-    "currency": " EUR",
-    "button": "Apply now"
-  },
-  "about": {
-    "heading": "Who are we?",
-    "p1": "We are Sokraft, a software company from Novi Sad, led by professors from the Faculty of Technical Sciences. We have been working in the field of artificial intelligence for over 15 years, a track record backed by more than 50 scientific papers we have published in the AI domain. Alongside our research, we are actively engaged in commercial software development, having successfully participated in the realization of over 30 commercial projects, a large portion of which involves AI. Through our educational company Aleph, we organized web programming courses where hundreds of participants successfully launched their careers and secured jobs in the IT sector. Just as knowledge of web technologies was essential for serious development during the boom of web programming, today we are witnessing that practically all modern IT projects require operational knowledge of artificial intelligence. That is why we designed this course, which covers both the theoretical foundations and the real-world practical applications of modern AI, equipping participants to productively join new projects. We created this course with the goal of directly addressing the shortage of qualified AI engineers, passing on knowledge that bridges conceptual rigor and hands-on engineering practice.",
-    "p2": "The course is intended for participants who already have prior programming experience. It is designed as an intensive program built to elevate participants' existing engineering skills to the level required for building modern AI solutions."
+  "footer": {
+    "tagline": "AI Engineering Course",
+    "copy": "© 2026 Sokraft. All rights reserved."
   }
 };

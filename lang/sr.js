@@ -1,30 +1,74 @@
 window.__translations__ = {
+  "meta": {
+    "title": "AI Kurs — Sokraft × FTN Novi Sad",
+    "description": "Praktičan inženjerski AI kurs: mašinsko učenje, neuronske mreže, LLM-ovi i autonomni AI agenti."
+  },
   "nav": {
-    "about":   "O nama",
-    "setup":   "Kurs",
+    "about": "O nama",
+    "setup": "Kurs",
     "lessons": "Lekcije",
     "contact": "Kontakt",
-    "cta":     "Prijavi se"
+    "cta": "Prijavi se"
   },
   "hero": {
-    "tag":      "Sokraft",
+    "tag": "Sokraft × FTN Novi Sad",
     "title": {
-      "bold":   "Primenjena",
-      "italic": "veštačka inteligencija"
+      "bold": "Primenjena",
+      "italic": "veštačka\ninteligencija"
     },
-"subtitle": "Praktičan inženjerski kurs koji pokriva temeljne koncepte veštačke inteligencije i njihovu primenu u savremenim softverskim aplikacijama. Kurs pokriva mašinsko učenje, neuronske mreže, velike jezičke modele i AI agente. Kurs vode profesori sa FTN sa 15+ godina iskustva u podučavanju i realnoj primeni AI.",
-    "cta":      "Prijavi se danas",
-    "cta2":     "Pogledaj kurikulum"
+    "subtitle": "Praktičan inženjerski kurs koji pokriva temeljne koncepte veštačke inteligencije i njihovu primenu u savremenim softverskim aplikacijama — mašinsko učenje, neuronske mreže, velike jezičke modele i AI agente. Kurs vode profesori sa FTN sa 15+ godina iskustva u podučavanju i realnoj primeni AI.",
+    "cta": "Prijavi se danas",
+    "cta2": "Pogledaj kurikulum",
+    "ticker": "Mašinsko učenje  •  Neuronske mreže  •  Računarska vizija  •  Veliki jezički modeli  •  RAG & MCP  •  AI agenti  •  Projektni rad "
+  },
+  "interests": {
+    "heading": "Šta te zanima?",
+    "subheading": "Izaberi sve što odgovara",
+    "options": {
+      "ml": "Mašinsko učenje",
+      "nn": "Neuronske mreže",
+      "llm": "LLM & RAG",
+      "agents": "AI agenti"
+    },
+    "empty": "Klikni da izabereš oblasti interesovanja iznad.",
+    "prefix": "Zainteresovan/a si za:",
+    "cta": "Prijavi se",
+    "messageTemplate": "Zanima me: {list}."
   },
   "stats": {
     "sessions": { "num": "14", "label": "Termina" },
-    "duration": { "num": "2h",           "label": "Trajanje termina" },
-    "months":   { "num": "2",            "label": "Meseca" },
-    "start":    { "num": "Jesen 2026",  "label": "Početak sledećeg kursa" },
-    "price":    { "num": "1200€",        "label": "Cena kursa" }
+    "duration": { "num": "2h", "label": "Trajanje termina" },
+    "months": { "num": "~2", "label": "Meseca" },
+    "start": { "num": "Jesen 2026", "label": "Početak sledećeg kursa" },
+    "price": { "num": "1200 €", "label": "Cena kursa" }
+  },
+  "courseSetup": {
+    "heading": "Organizacija kursa",
+    "title": {
+      "bold": "Kako",
+      "italic": "je kurs organizovan"
+    },
+    "group1": {
+      "title": "Šta je kurs?",
+      "pos": "Kurs se bavi AI i ML konceptima koji postaju neizostavni u rešavanju softverskih problema. Cilj je sticanje razumevanja AI koncepata i usvajanje tehnika njihove upotrebe tako da možete AI integrisati u realne softverske sisteme.",
+      "neg": "Ovo nije kurs korišćenja AI coding asistenata za brži razvoj softvera. Fokus kursa je na razumevanju, implementaciji i primeni tehnika veštačke inteligencije."
+    },
+    "group2": {
+      "title": "Za koga je kurs?",
+      "pos": "Kurs je namenjen osobama koje se bave razvojem softvera, ali ne poznaju AI i nisu pravili softverska rešenja koja primenjuju veštačku inteligenciju.",
+      "neg": "Kurs nije namenjen onima koji već poznaju ML algoritme, koriste ML modele, RAG sisteme i implementiraju LLM agente u svojim rešenjima."
+    },
+    "p1": "Kurs čini 14 termina koji se odvijaju u večernjim časovima i koji su po obimu i angažmanu prilagođeni zaposlenim polaznicima. Kurs traje oko dva meseca, a termini traju po 2 sata. Polaznici rade na svojim laptop računarima.",
+    "p2": "Prvi, uvodni termin predstavlja sadržaj kursa i daje jasan uvid u primenu veštačke inteligencije u produkcionim aplikacijama, prateći evoluciju i uvođenje AI tehnika kroz primer jedne realne FinTech aplikacije. Preostali termini podeljeni su u dva specijalizovana modula.",
+    "p3": "Prvi modul je namenjen tome da polaznici steknu duboko i intuitivno razumevanje problema koji se rešavaju pomoću veštačke inteligencije, kao i tehnika koje se pri tome koriste. Tokom ovog dela detaljno se diskutuju značajni teorijski i praktični aspekti i matematičke osnove savremenih AI modela.",
+    "p4": "Drugi modul kroz praktičan rad na projektu pokriva neposrednu primenu tehnika veštačke inteligencije u softverskim rešenjima. U ovom modulu polaznici rade u timovima, a termini su posvećeni vođenju polaznika kroz ideaciju i realizaciju njihovih projektnih rešenja."
   },
   "curriculum": {
     "heading": "Lekcije",
+    "title": {
+      "bold": "Plan",
+      "italic": "kursa"
+    },
     "part0": {
       "label": "Uvod",
       "title": "Šta AI može?",
@@ -35,7 +79,7 @@ window.__translations__ = {
       "label": "Modul 1",
       "title": "Šta AI jeste?",
       "session1": "Učenje iz podataka: Uvod u AI i mašinsko učenje",
-      "session1_content": "U ovoj lekciji polaznici se upoznaju sa konceptom generalizacije na osnovu podataka. Ključno pitanje kojim se bavimo jeste kako program, koristeći dostupne primere, može samostalno da unapredi svoj rad. Na primer,  kako program koji vrši procenu vrednosti nekretnina može da koristi istorijske podatke da bi donosio tačnije odluke u budućnosti. Pored toga, detaljno se razrađuju koncepti nadgledanog i nenadgledanog učenja, kao i metode pripreme podataka kako bi se iz njih izvukao maksimum informacija. Lekcija opisuje radni tok tipičnog projekta mašinskog učenja i predstavlja faze projekta i tipove mašinskog učenja.",
+      "session1_content": "U ovoj lekciji polaznici se upoznaju sa konceptom generalizacije na osnovu podataka. Ključno pitanje kojim se bavimo jeste kako program, koristeći dostupne primere, može samostalno da unapredi svoj rad. Na primer, kako program koji vrši procenu vrednosti nekretnina može da koristi istorijske podatke da bi donosio tačnije odluke u budućnosti. Pored toga, detaljno se razrađuju koncepti nadgledanog i nenadgledanog učenja, kao i metode pripreme podataka kako bi se iz njih izvukao maksimum informacija. Lekcija opisuje radni tok tipičnog projekta mašinskog učenja i predstavlja faze projekta i tipove mašinskog učenja.",
       "session2": "Rad sa tabelarnim podacima: modeli predviđanja (regresija i stabla odlučivanja)",
       "session2_content": "U okviru ove lekcije polaznici se upoznaju sa eksplorativnom analizom podataka, što obuhvata učitavanje tabelarnih podataka, njihovu inspekciju i tumačenje parametara deskriptivne statistike. Posebna pažnja posvećena je inženjeringu obeležja kao ključnom koraku u pripremi podataka. Na tako pripremljenom skupu primenjuju se regresioni modeli, pri čemu polaznici uče kako algoritam, treniran na ograničenom skupu podataka, uspešno generalizuje i predviđa vrednosti za potpuno nove, neviđene primere. Prvo se primenjuje linearna regresija, kroz koju se objašnjava kako se iz podataka izvodi matematički (parametarski) model koji ih generiše. Pored ovog klasičnog pristupa, polaznici savladavaju i neparametarsku regresiju kroz XGBoost algoritam.",
       "session3": "Kategorizacija podataka (klasifikacija)",
@@ -43,80 +87,65 @@ window.__translations__ = {
       "session4": "AI-vođeno rezonovanje: Neuronske mreže",
       "session4_content": "U okviru ove lekcije polaznici se upoznaju sa osnovama dubokog učenja i ključnim matematičkim konceptima koji stoje iza neuronskih mreža. Najpre se analizira anatomija veštačkog neurona, uključujući karakteristične aktivacione funkcije, a potom i arhitektura višeslojnog perceptrona. Poseban fokus stavljen je na mehanizme propagacije unapred, propagacije unazad i optimizaciju parametara mreže putem gradijentnog spusta. Polaznici će naučiti ulogu ključnih hiperparametara, funkcija gubitka, veličine paketa podataka i broja epoha. Na kraju, neuronske mreže se povezuju sa prethodno izučenim konceptima, kroz praktičan prikaz njihove primene u rešavanju problema regresije i klasifikacije.",
       "session5": "Obrada vizuelnih informacija: Primenjena kompjuterska vizija",
-      "session5_content": "U ovoj lekciji polaznici se uvode u oblast računarske vizije kao grane veštačke inteligencije. Pokriveni su osnovne koncepte i praktične primene računarske vizije, kao što su prepoznavanje i klasifikacija objekata, detekcija oblika, boja, tekstura i pokreta, kao i analiza kretanja i razumevanje strukture scene. Detaljno se analizira proces učitavanja slika sa diska i njihova inspekcija i prikaz unutar razvojnog okruženja.",
+      "session5_content": "U ovoj lekciji polaznici se uvode u oblast računarske vizije kao grane veštačke inteligencije. Pokriveni su osnovni koncepti i praktične primene računarske vizije, kao što su prepoznavanje i klasifikacija objekata, detekcija oblika, boja, tekstura i pokreta, kao i analiza kretanja i razumevanje strukture scene. Detaljno se analizira proces učitavanja slika sa diska i njihova inspekcija i prikaz unutar razvojnog okruženja.",
       "session6": "Generisanje i interpretacija prirodnog jezika pomoću AI: LLM-ovi",
-      "session6_content": "Veliki jezički modeli igraju ključnu ulogu u savremenoj primeni veštačke inteligencije. U ovoj lekciji, polaznici se upoznaju sa njihovom arhitekturom i principima rada. Detaljno je objašnjen koncept autoregresivnog generisanja teksta, gde se kroz proces tokenizacije i proračuna verovatnoće unutar rečnika prikazuje kako model predviđa naredni token. Pored toga, analizira se arhitektura Transformera kroz korake kreiranja semantičkih vektora ugradnji i pozicionog kodiranja, sa posebnim fokusom na mehanizam pažnje. Na kraju je pokazano kako se veliki jezički modeli ugrađuju u konkretne aplikacije.",
+      "session6_content": "Veliki jezički modeli igraju ključnu ulogu u savremenoj primeni veštačke inteligencije. U ovoj lekciji polaznici se upoznaju sa njihovom arhitekturom i principima rada. Detaljno je objašnjen koncept autoregresivnog generisanja teksta, gde se kroz proces tokenizacije i proračuna verovatnoće unutar rečnika prikazuje kako model predviđa naredni token. Pored toga, analizira se arhitektura Transformera kroz korake kreiranja semantičkih vektora ugradnji i pozicionog kodiranja, sa posebnim fokusom na mehanizam pažnje. Na kraju je pokazano kako se veliki jezički modeli ugrađuju u konkretne aplikacije.",
       "session7": "Primena LLM-ova — RAG, MCP",
-      "session7_content": "Korz ovu lekciju polaznici uče kako se veliki jezički modeli mogu specijalizovati za konkretne domene primene. Polaznici se upoznaju sa konceptom generisanja proširenog pretraživanjem (RAG), u okviru kojeg se eksterni tekstualni podaci pripremaju i stavljaju na raspolaganje modelu prilikom generisanja odgovora. Takođe, obrađuje se i Model Context Protocol (MCP), koji omogućava da se na bezbedan način spoljni alati, izvori podataka i servisi integrišu u rad velikih jezičkih modela. Lekciju prati praktičan primer razvoja domenski specifičnog govornog agenta.",
+      "session7_content": "Kroz ovu lekciju polaznici uče kako se veliki jezički modeli mogu specijalizovati za konkretne domene primene. Polaznici se upoznaju sa konceptom generisanja proširenog pretraživanjem (RAG), u okviru kojeg se eksterni tekstualni podaci pripremaju i stavljaju na raspolaganje modelu prilikom generisanja odgovora. Takođe, obrađuje se i Model Context Protocol (MCP), koji omogućava da se na bezbedan način spoljni alati, izvori podataka i servisi integrišu u rad velikih jezičkih modela. Lekciju prati praktičan primer razvoja domenski specifičnog govornog agenta.",
       "session8": "Od sadržaja do akcija: AI-vođene arhitekture i agenti. Formiranje timova i prezentacija projektnog zadatka.",
       "session8_content": "Polaznici se upoznaju sa ulogom i integracijom AI modela u arhitekturama realnih, produkcionih aplikacija. Predavanje pokriva proces ugradnje obučenog modela u veb servis i mehanizme pristupa njegovim funkcionalnostima putem REST API-ja. Detaljno se analizira problem asinhronog pristupa u sistemima visokog opterećenja, kao i potreba za uvođenjem redova poruka kroz koje servisi bezbedno i pouzdano komuniciraju, sa posebnim osvrtom na uvezivanje više izolovanih AI servisa u kompleksne poslovne tokove. Rad obuhvata i prelazak na koncept inteligentnih agenata. Na kraju termina vrši se formiranje timova i prezentacija projektnih zadataka koje polaznici razvijaju u drugom modulu.",
       "session9": "Test",
-      "session9_content": "Polaznici se upoznaju sa ulogom i integracijom AI modela u arhitekturama realnih, produkcionih aplikacija. Predavanje pokriva proces ugradnje obučenog modela u veb servis i mehanizme pristupa njegovim funkcionalnostima putem REST API-ja. Analizira problem asinhronog pristupa u sistemima visokog opterećenja, kao i potreba za uvođenjem redova poruka kroz koje servisi bezbedno i pouzdano komuniciraju, sa posebnim osvrtom na uvezivanje više izolovanih AI servisa u kompleksne poslovne tokove. Rad obuhvata i prelazak na koncept inteligentnih agenata. Na kraju termina vrši se formiranje timova i prezentacija projektnih zadataka koje polaznici razvijaju u drugom modulu."
+      "session9_content": "Ovaj termin je posvećen proveri znanja stečenog tokom prvog modula, kroz pisani test koji pokriva gradivo od uvodnog predavanja do prethodnog termina. Rezultat testa služi kao osnova za dalji rad na projektnim rešenjima u drugom modulu."
     },
     "part2": {
       "label": "Modul 2",
       "title": "Projektni rad",
       "session10": "Arhitektura projektnog rešenja",
       "session10_content": "Ovaj termin posvećen je ideaciji i konceptualnoj analizi projektnih rešenja. Tokom termina, timovi predstavljaju i obrazlažu svoj predlog arhitekture rešenja. Analiziraju se skupovi podataka koje polaznici smatraju relevantnim za razvoj svojih projekata. Posebna pažnja posvećena je diskusiji o dilemama na koje su timovi naišli tokom procesa ideacije. Sa termina polaznici odlaze sa odlukom o arhitekturi projekta i skupovima podataka koji će biti korišćeni.",
-      "session11": "AI Model u projektnom rešenju",
+      "session11": "AI model u projektnom rešenju",
       "session11_content": "Ovaj termin je posvećen diskusiji o tehničkim rešenjima koja će biti primenjena u projektu. Polaznici predstavljaju predloge AI modela, dok im nastavnici pružaju povratne informacije o njihovoj primenjivosti, kao i o prednostima i nedostacima izabranih pristupa. Tokom termina se razrešavaju dileme na koje su polaznici naišli, tako da sa vežbi odlaze sa konačnom odlukom o AI modelima koje će implementirati u svom projektu.",
       "session12": "Integralno projektno rešenje",
       "session12_content": "Ovaj termin je posvećen diskusiji o softverskim aplikacijama koje integrišu AI modele. Polaznici na ovaj čas dolaze sa već obučenim modelima i razvijenim prototipom aplikacije koja predstavlja njihovo projektno rešenje. Tokom termina analiziraju se prednosti i nedostaci pojedinih arhitektonskih rešenja, a polaznici dobijaju smernice za njihovo dalje unapređenje.",
       "session13": "Završna diskusija i prezentacija projekata",
-      "session13_content": "Poslednji termin kursa posvećen je prezentaciji i evaluaciji projektnih rešenja. Polaznici prezentuju svoje aplikacije i nastavnici ih komentarišu i ocenjuju."
+      "session13_content": "Poslednji termin kursa posvećen je prezentaciji i evaluaciji projektnih rešenja. Polaznici prezentuju svoje aplikacije, a nastavnici ih komentarišu i ocenjuju."
     }
+  },
+  "about": {
+    "heading": "Ko smo mi?",
+    "title": {
+      "bold": "15+ godina",
+      "italic": "primene AI u praksi"
+    },
+    "p1a": "Mi smo Sokraft, softverska kompanija iz Novog Sada, koju vode profesori sa Fakulteta tehničkih nauka. Veštačkom inteligencijom se bavimo preko 15 godina, što potvrđuje više od 50 naučnih radova koje smo objavili iz oblasti AI. Paralelno sa naučnim istraživanjem aktivno se bavimo razvojem softvera na tržištu i uspešno smo učestvovali u realizaciji preko 30 komercijalnih projekata, od kojih veliki deo uključuje AI.",
+    "p1b": "Kroz obrazovnu firmu Aleph organizovali smo kurseve veb programiranja, kroz koje su prošle stotine polaznika koji su uspešno započeli svoje karijere i zaposlili se u IT sektoru.",
+    "p1c": "Kao što je nekada poznavanje veb programiranja bilo neophodno za razvoj IT rešenja, danas smo svedoci da praktično svi savremeni IT projekti traže operativno znanje veštačke inteligencije. Zato smo osmislili ovaj kurs koji pokriva i teorijske osnove i realne praktične primene savremene veštačke inteligencije i polaznike osposobljava da se produktivno uključe u nove projekte.",
+      "p2": "Kurs je namenjen polaznicima koji već imaju prethodno iskustvo u programiranju i koncipiran je kao intenzivan program kreiran da postojeće inženjerske veštine polaznika podigne na nivo potreban za razvoj savremenih AI rešenja."
   },
   "contact": {
     "heading": "Kontakt",
     "infoTitle": "Kontaktirajte nas",
     "infoDesc": "Imate pitanja o kursu? Slobodno nas kontaktirajte putem forme ili direktno.",
     "partner": "U saradnji sa FTN Novi Sad",
+    "join": {
+      "bold": "Pridruži se",
+      "italic": "sledećoj grupi"
+    },
     "form": {
       "name": "Ime i prezime",
       "namePlaceholder": "Vaše ime i prezime",
       "email": "Email adresa",
+      "emailPlaceholder": "ime@primer.com",
       "company": "Kompanija",
       "companyPlaceholder": "Naziv kompanije (opciono)",
       "message": "Poruka",
       "messagePlaceholder": "Vaša poruka ili pitanje...",
-      "submit": "Pošaljite prijavu"
+      "submit": "Pošaljite prijavu",
+      "sending": "Slanje...",
+      "success": "Hvala! Prijava je zabeležena — javićemo vam se uskoro."
     }
   },
-  "cta": {
-    "label": "Investicija u vašu karijeru",
-    "amount": "1000",
-    "currency": " EUR",
-    "note": "Polaznici koriste svoje laptopove za praktične vežbe",
-    "button": "Prijavite se danas"
-  },
-  "courseSetup": {
-    "heading": "Organizacija kursa",
-    "group1": {
-      "title": "Šta je kurs?",
-      "pos": "Kurs se bavi AI i ML konceptima koji postaju neizostavni u rešavanju softverskih problema. Cilj je sticanje razumevanja AI koncepata i usvajanje tehnika njihove upotrebe tako da možete AI integrisati u realne softverske sisteme.",
-      "neg": "Ovo nije kurs korišćenja AI coding asistenata za brži razvoj softvera. Fokus kursa je na razumevanju, implementaciji i primeni tehnika veštačke inteligencije."
-    },
-    "group2": {
-      "title": "Za koga je kurs?",
-      "pos": "Kurs je namenjen osobama koje se bave razvojem softvera, ali ne poznaju AI i nisu pravili softverska rešenja koja primenjuju veštačku inteligenciju.",
-      "neg": "Kurs nije namenjen onima koji već poznaju ML algoritme, koriste ML modele, RAG sistema, i implementiraju LLM agente u svojim rešenjima."
-    },
-    "p1": "Kurs čini 14 termina koji se odvijaju u večernjim časovima i koji su po obimu i angažmanu prilagođeni zaposlenim polaznicima. Kurs traje 2 i po meseca. Termini traju po 2 sata. Polaznici rade na svojim laptop računarima.",
-    "p2": "Prvi, uvodni termin predstavlja sadržaj kursa i daje jasan uvid u primenu veštačke inteligencije u produkcionim aplikacijama i prati evoluciju i uvođenje AI tehnika kroz primer jedne realne FinTech aplikacije. Preostali termini podeljeni su u dva specijalizovana modula.",
-    "p3": "Prvi modul je namenjen tome da polaznici steknu duboko i intuitivno razumevanje problema koji se rešavaju pomoću veštačke inteligencije, kao i tehnika koje se pri tome koriste. Tokom ovog dela, detaljno se diskutuju značajni teorijski i praktični aspekti i matematičke osnove savremenih AI modela.",
-    "p4": "Drugi modul kroz praktičan rad na projektu pokriva neposrednu primenu tehnika veštačke inteligencije u softverskim rešenjima. U ovom modulu polaznici rade u timovima, a termini su posvećeni vođenju polaznika kroz ideaciju i realizaciju njihovih projektnih rešenja.",
-    "p5": "Ukupna cena kursa iznosi 1500 evra."
-  },
-  "apply": {
-    "heading": "Investiraj u svoju budućnost",
-    "note": "Polaznici rade na svojim laptop računarima",
-    "amount": "1500",
-    "currency": " EUR",
-    "button": "Prijavi se"
-  },
-  "about": {
-    "heading": "Ko smo mi?",
-    "p1": "Mi smo Sokraft, softverska kompanija iz Novog Sada, koju vode profesori sa Fakulteta tehničkih nauka. Veštačkom inteligencijom se bavimo preko 15 godina što potvrđuje više od 50 naučnih radova koje smo objavili iz oblasti AI. Paralelno sa naučnim istraživanjem aktivno se bavimo razvojem softvera na tržištu i uspešno smo učestvovali u realizaciji preko 30 komercijalnih projekata, od kojih veliki deo uključuje AI. Kroz obrazovnu firmu Aleph, organizovali smo kurseve veb programiranja, gde su kroz naše obuke prošle stotine polaznika koji su uspešno započeli svoje karijere i zaposlili se u IT sektoru. Kao što je tada, u doba procvata veb programiranja, poznavanje ove oblasti bilo neophodno za razvoj IT rešenja, danas smo svedoci da praktično svi savremeni IT projekti traže operativno znanje veštačke inteligencije. Zato smo osmislili ovaj kurs koji pokriva i teorijske osnove i realne praktične primene savremene veštačke inteligencije i polaznike osposobljava da se produktivno uključe u nove projekte. Kurs smo kreirali sa ciljem da direktno odgovorimo na izazov nedostatka kvalifikovanih AI inženjera i prenesemo vam znanje koje spaja ozbiljnost konceptualnih osnova i inženjersku praksu.",
-    "p2": "Kurs je namenjen polaznicima koji već imaju prethodnog iskustva u programiranju i koncipiran je kao intenzivan program kreiran da postojeće inženjerske veštine polaznika podigne na nivo potreban za razvoj savremenih AI rešenja."
+  "footer": {
+    "tagline": "AI Inženjerski Kurs",
+    "copy": "© 2026 Sokraft. Sva prava zadržana."
   }
 };

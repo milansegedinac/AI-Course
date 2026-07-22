@@ -1,141 +1,502 @@
-/* =============================================
-   AI Course — main.js
-   i18n + accordion + navbar scroll
-   ============================================= */
+(function () {
+  'use strict';
 
-// ---- i18n ----
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var selectedInterests = [];
+  var typewriterToken = 0;
 
-// Both lang files loaded synchronously in index.html,
-// captured into isolated globals before each overwrites window.__translations__
-const LANGS = {
-  en: window.__i18n_en__,
-  sr: window.__i18n_sr__
-};
+  /* ======================================================================
+     I18N
+     ====================================================================== */
+  var dictionaries = { sr: window.__i18n_sr__, en: window.__i18n_en__ };
+  var LANG_KEY = 'sokraft-lang';
+  var currentLang = 'sr';
+  try { currentLang = localStorage.getItem(LANG_KEY) || 'sr'; } catch (e) { /* file:// or private mode */ }
 
-let currentLang = localStorage.getItem('ai-course-lang') || 'en';
-
-function flatGet(obj, key) {
-  const parts = key.split('.');
-  let cur = obj;
-  for (const p of parts) {
-    if (cur == null) return null;
-    cur = cur[p];
+  function getPath(obj, path) {
+    return path.split('.').reduce(function (acc, key) {
+      return acc && acc[key] !== undefined ? acc[key] : undefined;
+    }, obj);
   }
-  return cur;
-}
 
-function applyTranslations(lang) {
-  const t = LANGS[lang] || LANGS.en;
-  if (!t) return;
+  function applyI18n(lang) {
+    var dict = dictionaries[lang];
+    if (!dict) return;
 
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const key = el.getAttribute('data-i18n');
-    const val = flatGet(t, key);
-    if (val != null) el.textContent = val;
-  });
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var value = getPath(dict, el.getAttribute('data-i18n'));
+      if (value === undefined) return;
+      el.dataset.abort = 'true'; // cancel any running count-up animation
+      el.textContent = value;
+    });
 
-  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-    const key = el.getAttribute('data-i18n-placeholder');
-    const val = flatGet(t, key);
-    if (val != null) el.setAttribute('placeholder', val);
-  });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(function (el) {
+      var value = getPath(dict, el.getAttribute('data-i18n-placeholder'));
+      if (value !== undefined) el.setAttribute('placeholder', value);
+    });
 
-  document.documentElement.lang = lang;
-}
+    if (dict.meta) {
+      document.title = dict.meta.title;
+      var metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) metaDesc.setAttribute('content', dict.meta.description);
+    }
 
-function switchLang(lang) {
-  currentLang = lang;
-  localStorage.setItem('ai-course-lang', lang);
-  document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.lang === lang);
-  });
-  applyTranslations(lang);
-}
+    document.documentElement.setAttribute('lang', lang);
 
-// ---- INIT ----
+    document.querySelectorAll('.lang-btn').forEach(function (btn) {
+      var isActive = btn.getAttribute('data-lang') === lang;
+      btn.classList.toggle('active', isActive);
+      btn.setAttribute('aria-pressed', String(isActive));
+    });
+    var switcher = document.querySelector('.lang-switch');
+    if (switcher) switcher.setAttribute('data-active', lang);
 
-document.addEventListener('DOMContentLoaded', () => {
+    currentLang = lang;
+    try { localStorage.setItem(LANG_KEY, lang); } catch (e) { /* ignore */ }
 
-  // 1. Set initial lang
-  applyTranslations(currentLang);
+    // re-measure any open accordion bodies (text length differs per language)
+    requestAnimationFrame(function () {
+      document.querySelectorAll('.session-head[aria-expanded="true"]').forEach(function (btn) {
+        var body = btn.nextElementSibling;
+        if (body) body.style.maxHeight = body.scrollHeight + 'px';
+      });
+    });
 
-  // 2. Lang switcher buttons
-  document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.addEventListener('click', () => switchLang(btn.dataset.lang));
-    if (btn.dataset.lang === currentLang) btn.classList.add('active');
-    else btn.classList.remove('active');
-  });
+    runHeroTypewriter(lang);
+    refreshInterestBanner(lang);
+  }
 
-  // 3. Navbar scroll effect
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 40);
-  }, { passive: true });
-
-  // 4. Hamburger menu
-  const hamburger = document.getElementById('nav-hamburger');
-  const navLinks = document.getElementById('nav-links');
-  hamburger.addEventListener('click', () => {
-    const open = navLinks.classList.toggle('open');
-    hamburger.classList.toggle('open', open);
-    hamburger.setAttribute('aria-expanded', open);
-  });
-  // Close on link click
-  navLinks.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      hamburger.classList.remove('open');
+  document.querySelectorAll('.lang-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      applyI18n(btn.getAttribute('data-lang'));
     });
   });
 
-  // 5. Accordion
-  document.querySelectorAll('.session-header').forEach(header => {
-    header.addEventListener('click', () => {
-      const expanded = header.getAttribute('aria-expanded') === 'true';
-      const body = header.nextElementSibling;
+  applyI18n(currentLang);
 
-      // Close all others in same list
-      const list = header.closest('.sessions-list');
-      list.querySelectorAll('.session-header[aria-expanded="true"]').forEach(other => {
-        if (other !== header) {
-          other.setAttribute('aria-expanded', 'false');
-          other.nextElementSibling.style.maxHeight = null;
+  /* ======================================================================
+     Navbar scroll state + scroll progress + scrollspy
+     ====================================================================== */
+  var navbar = document.getElementById('navbar');
+  var progress = document.getElementById('scroll-progress');
+  var toTopBtn = document.getElementById('to-top');
+  var spySections = ['setup', 'lessons', 'about', 'contact'].map(function (id) {
+    return document.getElementById(id);
+  }).filter(Boolean);
+  var spyLinks = document.querySelectorAll('.nav-link[data-spy]');
+
+  function onScroll() {
+    var y = window.scrollY;
+    if (navbar) navbar.classList.toggle('scrolled', y > 12);
+    if (progress) {
+      var doc = document.documentElement;
+      var max = doc.scrollHeight - doc.clientHeight;
+      progress.style.width = (max > 0 ? (y / max) * 100 : 0) + '%';
+    }
+    if (toTopBtn) toTopBtn.classList.toggle('visible', y > 600);
+
+    // scrollspy
+    var currentId = '';
+    var probe = y + window.innerHeight * 0.34;
+    spySections.forEach(function (sec) {
+      if (sec.offsetTop <= probe) currentId = sec.id;
+    });
+    spyLinks.forEach(function (link) {
+      link.classList.toggle('active', link.getAttribute('data-spy') === currentId);
+    });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  if (toTopBtn) {
+    toTopBtn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+    });
+  }
+
+  /* ======================================================================
+     Mobile menu
+     ====================================================================== */
+  var hamburger = document.getElementById('hamburger');
+  var mobileMenu = document.getElementById('mobile-menu');
+
+  function closeMobileMenu() {
+    if (!hamburger || !mobileMenu) return;
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+  }
+
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', function () {
+      var open = hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open', open);
+      hamburger.setAttribute('aria-expanded', String(open));
+    });
+    mobileMenu.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', closeMobileMenu);
+    });
+  }
+
+  /* ======================================================================
+     Cursor glow (desktop only)
+     ====================================================================== */
+  var glow = document.getElementById('cursor-glow');
+  if (glow && window.matchMedia('(pointer: fine)').matches && !reduceMotion) {
+    window.addEventListener('mousemove', function (e) {
+      glow.style.transform = 'translate(' + e.clientX + 'px,' + e.clientY + 'px)';
+    }, { passive: true });
+  }
+
+  /* ======================================================================
+     Reveal on scroll
+     ====================================================================== */
+  var revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && !reduceMotion) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          io.unobserve(entry.target);
         }
       });
+    }, { threshold: 0.12, rootMargin: '0px 0px -36px 0px' });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('in-view'); });
+  }
 
-      // Toggle this one
-      const next = !expanded;
-      header.setAttribute('aria-expanded', next);
-      body.style.maxHeight = next ? body.scrollHeight + 'px' : null;
+  /* ======================================================================
+     Stat count-up
+     ====================================================================== */
+  function animateCount(el) {
+    if (el.hasAttribute('data-no-count')) return;
+    var raw = el.textContent;
+    var match = raw.match(/^(\D*)(\d+)(\D*)$/);
+    if (!match) return;
+    var prefix = match[1], target = parseInt(match[2], 10), suffix = match[3];
+    if (reduceMotion || isNaN(target)) return;
+
+    delete el.dataset.abort;
+    var duration = 1100;
+    var start = null;
+
+    function step(ts) {
+      if (el.dataset.abort === 'true') return;
+      if (start === null) start = ts;
+      var p = Math.min((ts - start) / duration, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = prefix + Math.round(eased * target) + suffix;
+      if (p < 1) requestAnimationFrame(step);
+      else el.textContent = prefix + target + suffix;
+    }
+    requestAnimationFrame(step);
+  }
+
+  var countTargets = document.querySelectorAll('.stat-num, .mini-stat strong');
+  if ('IntersectionObserver' in window) {
+    var countIo = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          animateCount(entry.target);
+          countIo.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+    countTargets.forEach(function (el) { countIo.observe(el); });
+  }
+
+  /* ======================================================================
+     Curriculum accordion
+     ====================================================================== */
+  document.querySelectorAll('.session-head').forEach(function (btn) {
+    var body = btn.nextElementSibling;
+    btn.addEventListener('click', function () {
+      var isOpen = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!isOpen));
+      body.style.maxHeight = isOpen ? '0px' : body.scrollHeight + 'px';
     });
   });
 
-  // 6. Smooth scroll offset for fixed nav
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', e => {
-      const target = document.querySelector(anchor.getAttribute('href'));
-      if (!target) return;
-      e.preventDefault();
-      const offset = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h'), 10) || 80;
-      const top = target.getBoundingClientRect().top + window.scrollY - offset - 16;
-      window.scrollTo({ top, behavior: 'smooth' });
+  window.addEventListener('resize', function () {
+    document.querySelectorAll('.session-head[aria-expanded="true"]').forEach(function (btn) {
+      var body = btn.nextElementSibling;
+      body.style.maxHeight = body.scrollHeight + 'px';
     });
   });
 
-  // 7. Contact form
-  const form = document.getElementById('contact-form');
-  if (form) {
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      const data = new FormData(form);
-      console.log('Form submitted:', Object.fromEntries(data));
-      // Replace button text with success
-      const btn = form.querySelector('button[type="submit"]');
-      btn.textContent = '✓ Message sent';
-      btn.disabled = true;
-      btn.style.background = '#22c55e';
-      btn.style.borderColor = '#22c55e';
+  /* ======================================================================
+     Tilt cards
+     ====================================================================== */
+  if (window.matchMedia('(pointer: fine)').matches && !reduceMotion) {
+    document.querySelectorAll('.tilt').forEach(function (card) {
+      card.addEventListener('mousemove', function (e) {
+        var rect = card.getBoundingClientRect();
+        var x = (e.clientX - rect.left) / rect.width - 0.5;
+        var y = (e.clientY - rect.top) / rect.height - 0.5;
+        card.style.transform = 'perspective(760px) rotateX(' + (-y * 5) + 'deg) rotateY(' + (x * 5) + 'deg) translateY(-2px)';
+      });
+      card.addEventListener('mouseleave', function () {
+        card.style.transform = '';
+      });
     });
   }
 
-});
+  /* ======================================================================
+     Wordmark strip — horizontalno pomeranje vezano za scroll
+     (lerp smoothing; pauzira van viewporta; statična uz reduced-motion)
+     ====================================================================== */
+  (function wordmarkScroll() {
+    var strip = document.querySelector('.wordmark-strip');
+    var track = document.getElementById('wordmark-track');
+    if (!strip || !track || reduceMotion) return;
+
+    var target = 0;
+    var current = null;
+    var trackW = 0;
+    var rafId = null;
+    var running = false;
+
+    function measure() {
+      trackW = track.scrollWidth;
+      computeTarget();
+    }
+
+    function computeTarget() {
+      var rect = strip.getBoundingClientRect();
+      var vh = window.innerHeight || 1;
+      var p = (vh - rect.top) / (vh + rect.height); // 0 = ulazi odozdo, 1 = izlazi gore
+      if (p < 0) p = 0; else if (p > 1) p = 1;
+      target = p * (window.innerWidth - trackW);
+    }
+
+    function frame() {
+      if (current === null) current = target;
+      current += (target - current) * 0.09;
+      track.style.transform = 'translate3d(' + current.toFixed(2) + 'px,0,0)';
+      if (running) rafId = requestAnimationFrame(frame);
+    }
+
+    window.addEventListener('scroll', computeTarget, { passive: true });
+    window.addEventListener('resize', measure);
+
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        running = entries[0].isIntersecting;
+        if (running) {
+          computeTarget();
+          rafId = requestAnimationFrame(frame);
+        } else if (rafId) {
+          cancelAnimationFrame(rafId);
+        }
+      }, { rootMargin: '100px 0px' }).observe(strip);
+    } else {
+      running = true;
+      rafId = requestAnimationFrame(frame);
+    }
+
+    measure();
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(measure);
+    }
+    var wmImg = track.querySelector('img');
+    if (wmImg && !wmImg.complete) {
+      wmImg.addEventListener('load', measure);
+    }
+  })();
+
+  /* ======================================================================
+     Hero video background (local file: assets/sokraft-video-bg.mp4)
+     — Fades in once playback actually starts.
+     — Falls back to the animated haze background if the video can't play
+       (missing file, unsupported codec, prefers-reduced-motion).
+     ====================================================================== */
+  (function heroVideo() {
+    var hero = document.getElementById('hero');
+    var video = document.getElementById('hero-video');
+    if (!hero || !video) return;
+
+    var settled = false;
+
+    function fallback() {
+      if (settled) return;
+      settled = true;
+      hero.classList.add('hero--no-video');
+      try { video.removeAttribute('src'); video.load(); } catch (e) { /* ignore */ }
+    }
+
+    function ready() {
+      if (settled) return;
+      settled = true;
+      hero.classList.add('hero--video-ready');
+    }
+
+    if (reduceMotion) { fallback(); return; }
+
+    video.addEventListener('playing', ready);
+    video.addEventListener('error', fallback);
+
+    // in case playback already started before listeners were attached
+    if (!video.paused && video.readyState >= 3) {
+      ready();
+    } else {
+      var p = video.play();
+      if (p && p.catch) {
+        p.catch(function () { /* autoplay blocked — haze stays until interaction */ });
+      }
+    }
+
+    // Safety net: if nothing is playing after 8s, settle on the fallback look.
+    setTimeout(function () {
+      if (!settled && video.readyState < 2) fallback();
+    }, 8000);
+  })();
+
+  /* ======================================================================
+     Hero typewriter headline
+     ====================================================================== */
+  function runHeroTypewriter(lang) {
+    var boldEl = document.getElementById('hero-line-bold');
+    var italicEl = document.getElementById('hero-line-italic');
+    if (!boldEl || !italicEl) return;
+    var dict = dictionaries[lang];
+    if (!dict || !dict.hero) return;
+
+    var token = ++typewriterToken;
+    var lines = [
+      { el: boldEl, text: dict.hero.title.bold },
+      { el: italicEl, text: dict.hero.title.italic }
+    ];
+
+    boldEl.textContent = '';
+    italicEl.textContent = '';
+
+    if (reduceMotion) {
+      boldEl.textContent = lines[0].text;
+      italicEl.textContent = lines[1].text;
+      return;
+    }
+
+    var speed = 38;
+    var startDelay = 480;
+    var cursor = document.createElement('span');
+    cursor.className = 'type-cursor animate-blink';
+
+    setTimeout(function () {
+      if (token !== typewriterToken) return;
+      var lineIndex = 0, charIndex = 0;
+
+      var timer = setInterval(function () {
+        if (token !== typewriterToken) { clearInterval(timer); return; }
+        var current = lines[lineIndex];
+        charIndex++;
+        current.el.textContent = current.text.slice(0, charIndex);
+        current.el.appendChild(cursor);
+
+        if (charIndex >= current.text.length) {
+          lineIndex++;
+          charIndex = 0;
+          if (lineIndex >= lines.length) {
+            clearInterval(timer);
+            setTimeout(function () {
+              if (token === typewriterToken) cursor.remove();
+            }, 560);
+          }
+        }
+      }, speed);
+    }, startDelay);
+  }
+
+  /* ======================================================================
+     Interest pills (multi-select + feedback banner)
+     ====================================================================== */
+  function refreshInterestBanner(lang) {
+    var dict = dictionaries[lang];
+    if (!dict || !dict.interests) return;
+    var emptyEl = document.getElementById('interest-empty');
+    var bannerEl = document.getElementById('interest-banner');
+    var bannerTextEl = document.getElementById('interest-banner-text');
+    if (!emptyEl || !bannerEl || !bannerTextEl) return;
+
+    if (selectedInterests.length === 0) {
+      emptyEl.hidden = false;
+      bannerEl.hidden = true;
+    } else {
+      var labels = selectedInterests.map(function (key) {
+        return getPath(dict, 'interests.options.' + key) || key;
+      });
+      bannerTextEl.innerHTML = dict.interests.prefix + ' <strong>' + labels.join(', ') + '</strong>';
+      emptyEl.hidden = true;
+      bannerEl.hidden = false;
+    }
+  }
+
+  document.querySelectorAll('.pill').forEach(function (pill) {
+    pill.addEventListener('click', function () {
+      var value = pill.getAttribute('data-value');
+      var isActive = pill.classList.toggle('active');
+      pill.setAttribute('aria-pressed', String(isActive));
+
+      if (isActive) {
+        if (selectedInterests.indexOf(value) === -1) selectedInterests.push(value);
+      } else {
+        selectedInterests = selectedInterests.filter(function (v) { return v !== value; });
+      }
+      refreshInterestBanner(currentLang);
+    });
+  });
+
+  var interestGoBtn = document.getElementById('interest-go');
+  if (interestGoBtn) {
+    interestGoBtn.addEventListener('click', function () {
+      var dict = dictionaries[currentLang];
+      var labels = selectedInterests.map(function (key) {
+        return getPath(dict, 'interests.options.' + key) || key;
+      });
+      var messageEl = document.getElementById('f-message');
+      var nameEl = document.getElementById('f-name');
+      if (messageEl && labels.length) {
+        messageEl.value = dict.interests.messageTemplate.replace('{list}', labels.join(', '));
+        messageEl.dispatchEvent(new Event('input', { bubbles: true }));
+      }
+      var contactSection = document.getElementById('contact');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
+      }
+      setTimeout(function () { if (nameEl) nameEl.focus({ preventScroll: true }); }, reduceMotion ? 0 : 500);
+    });
+  }
+
+  /* ======================================================================
+     Contact form (no backend yet — logs + shows confirmation)
+     ====================================================================== */
+  var form = document.getElementById('contact-form');
+  if (form) {
+    var submitLabel = form.querySelector('.submit-label');
+    var successMsg = document.getElementById('form-success');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!form.reportValidity || form.reportValidity()) {
+        var data = {};
+        new FormData(form).forEach(function (v, k) { data[k] = v; });
+        var dict = dictionaries[currentLang];
+        var originalLabel = submitLabel.textContent;
+
+        form.classList.add('is-loading');
+        submitLabel.textContent = dict.contact.form.sending;
+
+        setTimeout(function () {
+          // eslint-disable-next-line no-console
+          console.log('[Sokraft contact form — no backend wired yet]', data);
+          form.classList.remove('is-loading');
+          submitLabel.textContent = originalLabel;
+          successMsg.classList.add('show');
+          form.reset();
+          setTimeout(function () { successMsg.classList.remove('show'); }, 5000);
+        }, 900);
+      }
+    });
+  }
+
+})();
