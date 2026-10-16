@@ -21,20 +21,6 @@ window.__translations__ = {
     "cta2": "Pogledaj kurikulum",
     "ticker": "Mašinsko učenje  •  Neuronske mreže  •  Računarska vizija  •  Veliki jezički modeli  •  RAG & MCP  •  AI agenti  •  Projektni rad "
   },
-  "interests": {
-    "heading": "Šta te zanima?",
-    "subheading": "Izaberi sve što odgovara",
-    "options": {
-      "ml": "Mašinsko učenje",
-      "nn": "Neuronske mreže",
-      "llm": "LLM & RAG",
-      "agents": "AI agenti"
-    },
-    "empty": "Klikni da izabereš oblasti interesovanja iznad.",
-    "prefix": "Zainteresovan/a si za:",
-    "cta": "Prijavi se",
-    "messageTemplate": "Zanima me: {list}."
-  },
   "stats": {
     "sessions": { "num": "14", "label": "Termina" },
     "duration": { "num": "2h", "label": "Trajanje termina" },

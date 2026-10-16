@@ -2,7 +2,6 @@
   'use strict';
 
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var selectedInterests = [];
   var typewriterToken = 0;
 
   /* ======================================================================
@@ -63,7 +62,6 @@
     });
 
     runHeroTypewriter(lang);
-    refreshInterestBanner(lang);
   }
 
   document.querySelectorAll('.lang-btn').forEach(function (btn) {
@@ -243,69 +241,6 @@
   }
 
   /* ======================================================================
-     Wordmark strip — horizontalno pomeranje vezano za scroll
-     (lerp smoothing; pauzira van viewporta; statična uz reduced-motion)
-     ====================================================================== */
-  (function wordmarkScroll() {
-    var strip = document.querySelector('.wordmark-strip');
-    var track = document.getElementById('wordmark-track');
-    if (!strip || !track || reduceMotion) return;
-
-    var target = 0;
-    var current = null;
-    var trackW = 0;
-    var rafId = null;
-    var running = false;
-
-    function measure() {
-      trackW = track.scrollWidth;
-      computeTarget();
-    }
-
-    function computeTarget() {
-      var rect = strip.getBoundingClientRect();
-      var vh = window.innerHeight || 1;
-      var p = (vh - rect.top) / (vh + rect.height); // 0 = ulazi odozdo, 1 = izlazi gore
-      if (p < 0) p = 0; else if (p > 1) p = 1;
-      target = p * (window.innerWidth - trackW);
-    }
-
-    function frame() {
-      if (current === null) current = target;
-      current += (target - current) * 0.09;
-      track.style.transform = 'translate3d(' + current.toFixed(2) + 'px,0,0)';
-      if (running) rafId = requestAnimationFrame(frame);
-    }
-
-    window.addEventListener('scroll', computeTarget, { passive: true });
-    window.addEventListener('resize', measure);
-
-    if ('IntersectionObserver' in window) {
-      new IntersectionObserver(function (entries) {
-        running = entries[0].isIntersecting;
-        if (running) {
-          computeTarget();
-          rafId = requestAnimationFrame(frame);
-        } else if (rafId) {
-          cancelAnimationFrame(rafId);
-        }
-      }, { rootMargin: '100px 0px' }).observe(strip);
-    } else {
-      running = true;
-      rafId = requestAnimationFrame(frame);
-    }
-
-    measure();
-    if (document.fonts && document.fonts.ready) {
-      document.fonts.ready.then(measure);
-    }
-    var wmImg = track.querySelector('img');
-    if (wmImg && !wmImg.complete) {
-      wmImg.addEventListener('load', measure);
-    }
-  })();
-
-  /* ======================================================================
      Hero video background (local file: assets/sokraft-video-bg.mp4)
      — Fades in once playback actually starts.
      — Falls back to the animated haze background if the video can't play
@@ -405,66 +340,6 @@
         }
       }, speed);
     }, startDelay);
-  }
-
-  /* ======================================================================
-     Interest pills (multi-select + feedback banner)
-     ====================================================================== */
-  function refreshInterestBanner(lang) {
-    var dict = dictionaries[lang];
-    if (!dict || !dict.interests) return;
-    var emptyEl = document.getElementById('interest-empty');
-    var bannerEl = document.getElementById('interest-banner');
-    var bannerTextEl = document.getElementById('interest-banner-text');
-    if (!emptyEl || !bannerEl || !bannerTextEl) return;
-
-    if (selectedInterests.length === 0) {
-      emptyEl.hidden = false;
-      bannerEl.hidden = true;
-    } else {
-      var labels = selectedInterests.map(function (key) {
-        return getPath(dict, 'interests.options.' + key) || key;
-      });
-      bannerTextEl.innerHTML = dict.interests.prefix + ' <strong>' + labels.join(', ') + '</strong>';
-      emptyEl.hidden = true;
-      bannerEl.hidden = false;
-    }
-  }
-
-  document.querySelectorAll('.pill').forEach(function (pill) {
-    pill.addEventListener('click', function () {
-      var value = pill.getAttribute('data-value');
-      var isActive = pill.classList.toggle('active');
-      pill.setAttribute('aria-pressed', String(isActive));
-
-      if (isActive) {
-        if (selectedInterests.indexOf(value) === -1) selectedInterests.push(value);
-      } else {
-        selectedInterests = selectedInterests.filter(function (v) { return v !== value; });
-      }
-      refreshInterestBanner(currentLang);
-    });
-  });
-
-  var interestGoBtn = document.getElementById('interest-go');
-  if (interestGoBtn) {
-    interestGoBtn.addEventListener('click', function () {
-      var dict = dictionaries[currentLang];
-      var labels = selectedInterests.map(function (key) {
-        return getPath(dict, 'interests.options.' + key) || key;
-      });
-      var messageEl = document.getElementById('f-message');
-      var nameEl = document.getElementById('f-name');
-      if (messageEl && labels.length) {
-        messageEl.value = dict.interests.messageTemplate.replace('{list}', labels.join(', '));
-        messageEl.dispatchEvent(new Event('input', { bubbles: true }));
-      }
-      var contactSection = document.getElementById('contact');
-      if (contactSection) {
-        contactSection.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
-      }
-      setTimeout(function () { if (nameEl) nameEl.focus({ preventScroll: true }); }, reduceMotion ? 0 : 500);
-    });
   }
 
   /* ======================================================================

@@ -21,20 +21,6 @@ window.__translations__ = {
     "cta2": "View curriculum",
     "ticker": "Machine Learning  •  Neural Networks  •  Computer Vision  •  Large Language Models  •  RAG & MCP  •  AI Agents  •  Project Work "
   },
-  "interests": {
-    "heading": "What are you interested in?",
-    "subheading": "Select all that apply",
-    "options": {
-      "ml": "Machine Learning",
-      "nn": "Neural Networks",
-      "llm": "LLM & RAG",
-      "agents": "AI Agents"
-    },
-    "empty": "Click to select the areas you're interested in above.",
-    "prefix": "You're interested in:",
-    "cta": "Apply now",
-    "messageTemplate": "I'm interested in: {list}."
-  },
   "stats": {
     "sessions": { "num": "14", "label": "Sessions" },
     "duration": { "num": "2h", "label": "Per session" },
