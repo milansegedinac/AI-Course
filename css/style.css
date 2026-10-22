@@ -1054,13 +1054,6 @@ html.js .reveal.in-view{ opacity:1; transform:none; filter:none; }
 .footer-brand-row{
   display:flex; align-items:center; gap:22px;
 }
-.footer-partner{
-  font-family:var(--font-mono);
-  font-size:11px; letter-spacing:.18em; text-transform:uppercase;
-  color:var(--text-dimmer);
-  padding-left:22px;
-  border-left:1px solid var(--border);
-}
 .footer-tagline{
   margin-top:6px;
   font-family:var(--font-mono);

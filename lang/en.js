@@ -1,6 +1,6 @@
 window.__translations__ = {
   "meta": {
-    "title": "AI Course — Sokraft × FTN Novi Sad",
+    "title": "AI Course — Sokraft",
     "description": "A hands-on AI engineering course covering machine learning, neural networks, LLMs, and autonomous AI agents."
   },
   "nav": {
@@ -22,7 +22,7 @@ window.__translations__ = {
     "ticker": "Machine Learning  •  Neural Networks  •  Computer Vision  •  Large Language Models  •  RAG & MCP  •  AI Agents  •  Project Work "
   },
   "stats": {
-    "sessions": { "num": "14", "label": "Sessions" },
+    "sessions": { "num": "15", "label": "Sessions" },
     "duration": { "num": "2h", "label": "Per session" },
     "months": { "num": "~2", "label": "Months" },
     "start": { "num": "Fall 2026", "label": "Next cohort" },
@@ -44,7 +44,7 @@ window.__translations__ = {
       "pos": "The course is intended for people who work in software development but are not familiar with AI and have not built software solutions that apply artificial intelligence.",
       "neg": "The course is not intended for those who already know ML algorithms, use ML models, RAG systems, and implement LLM agents in their solutions."
     },
-    "p1": "The course consists of 14 sessions held in the evening, with the workload and commitment tailored to employed participants. The course lasts about two months, and each session lasts 2 hours. Participants work on their own laptops.",
+    "p1": "The course consists of 15 sessions held in the evening, with the workload and commitment tailored to employed participants. The course lasts about two months, and each session lasts 2 hours. Participants work on their own laptops.",
     "p2": "The first, introductory session presents the course content and provides a clear insight into the application of artificial intelligence in production applications, tracing the evolution and adoption of AI techniques through a real-world FinTech application example. The remaining sessions are split into two specialized modules.",
     "p3": "The first module is designed for participants to acquire a deep and intuitive understanding of the problems solved by artificial intelligence, as well as the techniques used in the process. Significant theoretical, practical, and mathematical foundations of modern AI models are discussed in detail.",
     "p4": "The second module covers the direct application of artificial intelligence techniques in software solutions through hands-on project work. Participants work in teams, and sessions are dedicated to guiding them through the ideation and realization of their project solutions."
@@ -78,22 +78,24 @@ window.__translations__ = {
       "session6_content": "Large language models play a key role in modern AI applications. In this lesson, participants are introduced to their architecture and working principles. The concept of autoregressive text generation is explained in detail, showing how the model predicts the next token through tokenization and vocabulary probability calculations. The Transformer architecture is analyzed through the steps of creating semantic embedding vectors and positional encoding, with a specific focus on the attention mechanism. Finally, it is shown how large language models are embedded into concrete applications.",
       "session7": "Applying LLMs — RAG, MCP",
       "session7_content": "In this lesson, participants learn how large language models can be specialized for specific domains of application. They are introduced to the concept of Retrieval-Augmented Generation (RAG), in which external textual data is prepared and made available to the model during response generation. The Model Context Protocol (MCP) is also covered, enabling external tools, data sources, and services to be securely integrated into the workflow of large language models. The lesson is accompanied by a practical example of building a domain-specific conversational agent.",
-      "session8": "From content to actions: AI-driven architectures and agents. Team formation and project task presentation.",
-      "session8_content": "Students are introduced to the role and integration of AI models within the architectures of real-world, production applications. The lecture covers the process of embedding a trained model into a web service and the mechanisms for accessing its functionalities via a REST API. The challenges of asynchronous access in high-load systems are analyzed in detail, alongside the necessity of introducing message queues for secure and reliable inter-service communication, with a specific focus on orchestrating multiple isolated AI services into complex business workflows. The session concludes with team formation and the presentation of project tasks that participants will develop throughout the second module.",
-      "session9": "Test",
-      "session9_content": "This session is dedicated to assessing the knowledge gained during the first module, through a written test covering material from the introductory lecture up to the previous session. The test result serves as a foundation for the project work carried out in the second module."
+      "session8": "Intelligent agents",
+      "session8_content": "In this lesson, participants learn what an agent actually is and what types of agents exist. They discover how AI agents really work by building them from scratch, without using a framework. The starting point is function calling, the mechanism through which a language model uses external tools, from which a complete agent is developed with its own working loop, memory and termination conditions. The lesson also covers the evaluator–optimizer pattern, as well as the concepts of autonomous agents and agents that learn from their own experience.",
+      "session9": "Multi-agent systems",
+      "session9_content": "In this lesson, participants learn how complex tasks are solved through the collaboration of multiple specialized agents, each with its own role and tools. The lesson opens with an overview of the most widely used agent development frameworks and the protocols that connect them, MCP and A2A. The agent built from scratch is then reimplemented in LangGraph, where the workflow is described as a state graph and a team of agents is coordinated by a supervisor that decides who takes over the work next. The second part of the lesson is dedicated to asynchronous architecture, in which agents communicate by exchanging messages over topics: they listen, process and pass messages on, without waiting for one another. Finally, an orchestrator is developed that receives user requests, distributes tasks to one or more agents in parallel and assembles the response once they have all finished.",
+      "session10": "Best practices in AI",
+      "session10_content": "This lesson covers what comes after an AI model is developed: deploying it reliably to production, monitoring it and maintaining it. Participants learn why machine learning systems fail, from operational outages to silent errors caused by data distribution shift, edge cases and degenerate feedback loops, illustrated with examples from real industry. Key practices are covered: versioning of code, data and models, automated training pipelines, the model registry, safe release strategies for new versions, monitoring and retraining. A dedicated part focuses on LLM Ops, the specifics of applications built on language models and agents: versioning prompts and models, automated evaluation with test sets, tracing every step of an agent and cost control. The lesson is accompanied by two hands-on examples of the full path to production, along with an overview of the tools used along the way."
     },
     "part2": {
       "label": "Module 2",
       "title": "Project Work",
-      "session10": "Solution architecture",
-      "session10_content": "This session is dedicated to ideation and conceptual analysis of project solutions. Teams present and explain their proposed solution architecture. The datasets that participants consider relevant for their projects are analyzed. Special attention is given to discussing the dilemmas teams encountered during the ideation process. Participants leave the session with a decision on the project architecture and the datasets to be used.",
-      "session11": "AI model in the project solution",
-      "session11_content": "This session is dedicated to discussing the technical solutions to be applied in the project. Participants present their proposed AI models, while instructors provide feedback on their applicability and the advantages and disadvantages of the chosen approaches. Dilemmas encountered by participants are resolved during the session, so they leave with a final decision on the AI models they will implement in their project.",
-      "session12": "Integrated project solution",
-      "session12_content": "This session is dedicated to discussing the software applications that integrate AI models. Participants come to this session with already trained models and a developed prototype of their project solution. The advantages and disadvantages of individual architectural decisions are analyzed, and participants receive guidance for further improvement.",
-      "session13": "Final discussion and project presentations",
-      "session13_content": "The final session of the course is dedicated to the presentation and evaluation of project solutions. Participants present their applications and instructors provide comments and grades."
+      "session11": "Solution architecture",
+      "session11_content": "This session is dedicated to ideation and conceptual analysis of project solutions. Teams present and explain their proposed solution architecture. The datasets that participants consider relevant for their projects are analyzed. Special attention is given to discussing the dilemmas teams encountered during the ideation process. Participants leave the session with a decision on the project architecture and the datasets to be used.",
+      "session12": "AI model in the project solution",
+      "session12_content": "This session is dedicated to discussing the technical solutions to be applied in the project. Participants present their proposed AI models, while instructors provide feedback on their applicability and the advantages and disadvantages of the chosen approaches. Dilemmas encountered by participants are resolved during the session, so they leave with a final decision on the AI models they will implement in their project.",
+      "session13": "Integrated project solution",
+      "session13_content": "This session is dedicated to discussing the software applications that integrate AI models. Participants come to this session with already trained models and a developed prototype of their project solution. The advantages and disadvantages of individual architectural decisions are analyzed, and participants receive guidance for further improvement.",
+      "session14": "Final discussion and project presentations",
+      "session14_content": "The final session of the course is dedicated to the presentation and evaluation of project solutions. Participants present their applications and instructors provide comments and grades."
     }
   },
   "about": {
@@ -111,7 +113,6 @@ window.__translations__ = {
     "heading": "Contact",
     "infoTitle": "Get in touch",
     "infoDesc": "Have questions about the course? Feel free to contact us via the form or directly.",
-    "partner": "In collaboration with FTN Novi Sad",
     "join": {
       "bold": "Join",
       "italic": "the next cohort"

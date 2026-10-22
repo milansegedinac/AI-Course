@@ -1,6 +1,6 @@
 window.__translations__ = {
   "meta": {
-    "title": "AI Kurs — Sokraft × FTN Novi Sad",
+    "title": "AI Kurs — Sokraft",
     "description": "Praktičan inženjerski AI kurs: mašinsko učenje, neuronske mreže, LLM-ovi i autonomni AI agenti."
   },
   "nav": {
@@ -22,7 +22,7 @@ window.__translations__ = {
     "ticker": "Mašinsko učenje  •  Neuronske mreže  •  Računarska vizija  •  Veliki jezički modeli  •  RAG & MCP  •  AI agenti  •  Projektni rad "
   },
   "stats": {
-    "sessions": { "num": "14", "label": "Termina" },
+    "sessions": { "num": "15", "label": "Termina" },
     "duration": { "num": "2h", "label": "Trajanje termina" },
     "months": { "num": "~2", "label": "Meseca" },
     "start": { "num": "Jesen 2026", "label": "Početak sledećeg kursa" },
@@ -44,7 +44,7 @@ window.__translations__ = {
       "pos": "Kurs je namenjen osobama koje se bave razvojem softvera, ali ne poznaju AI i nisu pravili softverska rešenja koja primenjuju veštačku inteligenciju.",
       "neg": "Kurs nije namenjen onima koji već poznaju ML algoritme, koriste ML modele, RAG sisteme i implementiraju LLM agente u svojim rešenjima."
     },
-    "p1": "Kurs čini 14 termina koji se odvijaju u večernjim časovima i koji su po obimu i angažmanu prilagođeni zaposlenim polaznicima. Kurs traje oko dva meseca, a termini traju po 2 sata. Polaznici rade na svojim laptop računarima.",
+    "p1": "Kurs čini 15 termina koji se odvijaju u večernjim časovima i koji su po obimu i angažmanu prilagođeni zaposlenim polaznicima. Kurs traje oko dva meseca, a termini traju po 2 sata. Polaznici rade na svojim laptop računarima.",
     "p2": "Prvi, uvodni termin predstavlja sadržaj kursa i daje jasan uvid u primenu veštačke inteligencije u produkcionim aplikacijama, prateći evoluciju i uvođenje AI tehnika kroz primer jedne realne FinTech aplikacije. Preostali termini podeljeni su u dva specijalizovana modula.",
     "p3": "Prvi modul je namenjen tome da polaznici steknu duboko i intuitivno razumevanje problema koji se rešavaju pomoću veštačke inteligencije, kao i tehnika koje se pri tome koriste. Tokom ovog dela detaljno se diskutuju značajni teorijski i praktični aspekti i matematičke osnove savremenih AI modela.",
     "p4": "Drugi modul kroz praktičan rad na projektu pokriva neposrednu primenu tehnika veštačke inteligencije u softverskim rešenjima. U ovom modulu polaznici rade u timovima, a termini su posvećeni vođenju polaznika kroz ideaciju i realizaciju njihovih projektnih rešenja."
@@ -78,22 +78,24 @@ window.__translations__ = {
       "session6_content": "Veliki jezički modeli igraju ključnu ulogu u savremenoj primeni veštačke inteligencije. U ovoj lekciji polaznici se upoznaju sa njihovom arhitekturom i principima rada. Detaljno je objašnjen koncept autoregresivnog generisanja teksta, gde se kroz proces tokenizacije i proračuna verovatnoće unutar rečnika prikazuje kako model predviđa naredni token. Pored toga, analizira se arhitektura Transformera kroz korake kreiranja semantičkih vektora ugradnji i pozicionog kodiranja, sa posebnim fokusom na mehanizam pažnje. Na kraju je pokazano kako se veliki jezički modeli ugrađuju u konkretne aplikacije.",
       "session7": "Primena LLM-ova — RAG, MCP",
       "session7_content": "Kroz ovu lekciju polaznici uče kako se veliki jezički modeli mogu specijalizovati za konkretne domene primene. Polaznici se upoznaju sa konceptom generisanja proširenog pretraživanjem (RAG), u okviru kojeg se eksterni tekstualni podaci pripremaju i stavljaju na raspolaganje modelu prilikom generisanja odgovora. Takođe, obrađuje se i Model Context Protocol (MCP), koji omogućava da se na bezbedan način spoljni alati, izvori podataka i servisi integrišu u rad velikih jezičkih modela. Lekciju prati praktičan primer razvoja domenski specifičnog govornog agenta.",
-      "session8": "Od sadržaja do akcija: AI-vođene arhitekture i agenti. Formiranje timova i prezentacija projektnog zadatka.",
-      "session8_content": "Polaznici se upoznaju sa ulogom i integracijom AI modela u arhitekturama realnih, produkcionih aplikacija. Predavanje pokriva proces ugradnje obučenog modela u veb servis i mehanizme pristupa njegovim funkcionalnostima putem REST API-ja. Detaljno se analizira problem asinhronog pristupa u sistemima visokog opterećenja, kao i potreba za uvođenjem redova poruka kroz koje servisi bezbedno i pouzdano komuniciraju, sa posebnim osvrtom na uvezivanje više izolovanih AI servisa u kompleksne poslovne tokove. Rad obuhvata i prelazak na koncept inteligentnih agenata. Na kraju termina vrši se formiranje timova i prezentacija projektnih zadataka koje polaznici razvijaju u drugom modulu.",
-      "session9": "Test",
-      "session9_content": "Ovaj termin je posvećen proveri znanja stečenog tokom prvog modula, kroz pisani test koji pokriva gradivo od uvodnog predavanja do prethodnog termina. Rezultat testa služi kao osnova za dalji rad na projektnim rešenjima u drugom modulu."
+      "session8": "Inteligentni agenti",
+      "session8_content": "U ovoj lekciji polaznici uče šta je to zapravo agent i koji tipovi agenata postoje. Upoznaju se sa tim kako AI agenti zapravo rade, tako što ih grade od nule, bez korišćenja frejmvorka. Polazi se od mehanizma pozivanja funkcija, kroz koji jezički model koristi spoljne alate, a zatim se razvija kompletan agent sa sopstvenom petljom rada, memorijom i uslovima završetka. Obrađuju se i obrazac evaluator–optimizer, kao i koncepti autonomnih agenata i agenata koji uče iz sopstvenog iskustva.",
+      "session9": "Multiagentski sistemi",
+      "session9_content": "Kroz ovu lekciju polaznici uče kako se složeni zadaci rešavaju saradnjom više specijalizovanih agenata, od kojih svaki ima sopstvenu ulogu i alate. Lekcija počinje pregledom najzastupljenijih frejmvorka za razvoj agenata i protokola koji ih povezuju, MCP i A2A. Zatim se agent razvijen od nule ponovo implementira u LangGraph-u, gde se tok rada opisuje kao graf stanja, a tim agenata koordiniše supervizor koji odlučuje ko sledeći preuzima posao. Drugi deo lekcije posvećen je asinhronoj arhitekturi, u kojoj agenti komuniciraju razmenom poruka preko topika: slušaju, obrađuju i prosleđuju poruke dalje, bez međusobnog čekanja. Na kraju se razvija orkestrator koji prima zahteve korisnika, raspoređuje zadatke na jednog ili više agenata paralelno i sastavlja odgovor kada svi završe.",
+      "session10": "Dobre prakse u AI",
+      "session10_content": "Ova lekcija bavi se onim što sledi nakon razvoja AI modela: njegovim pouzdanim puštanjem u produkciju, praćenjem i održavanjem. Polaznici se upoznaju sa razlozima zbog kojih sistemi mašinskog učenja otkazuju, od operativnih kvarova do tihih grešaka izazvanih promenom distribucije podataka, graničnim slučajevima i degenerisanim povratnim spregama, uz primere iz stvarne industrije. Obrađuju se ključne prakse: verzionisanje koda, podataka i modela, automatizovani pipeline-ovi za treniranje, registar modela, bezbedne strategije puštanja nove verzije, monitoring i ponovno treniranje. Poseban deo posvećen je LLM Ops-u, odnosno specifičnostima aplikacija zasnovanih na jezičkim modelima i agentima: verzionisanju promptova i modela, automatskoj evaluaciji kroz testne skupove, praćenju svakog koraka agenta i kontroli troškova. Lekciju prate dva praktična primera celog puta do produkcije, uz pregled alata koji se pri tome koriste."
     },
     "part2": {
       "label": "Modul 2",
       "title": "Projektni rad",
-      "session10": "Arhitektura projektnog rešenja",
-      "session10_content": "Ovaj termin posvećen je ideaciji i konceptualnoj analizi projektnih rešenja. Tokom termina, timovi predstavljaju i obrazlažu svoj predlog arhitekture rešenja. Analiziraju se skupovi podataka koje polaznici smatraju relevantnim za razvoj svojih projekata. Posebna pažnja posvećena je diskusiji o dilemama na koje su timovi naišli tokom procesa ideacije. Sa termina polaznici odlaze sa odlukom o arhitekturi projekta i skupovima podataka koji će biti korišćeni.",
-      "session11": "AI model u projektnom rešenju",
-      "session11_content": "Ovaj termin je posvećen diskusiji o tehničkim rešenjima koja će biti primenjena u projektu. Polaznici predstavljaju predloge AI modela, dok im nastavnici pružaju povratne informacije o njihovoj primenjivosti, kao i o prednostima i nedostacima izabranih pristupa. Tokom termina se razrešavaju dileme na koje su polaznici naišli, tako da sa vežbi odlaze sa konačnom odlukom o AI modelima koje će implementirati u svom projektu.",
-      "session12": "Integralno projektno rešenje",
-      "session12_content": "Ovaj termin je posvećen diskusiji o softverskim aplikacijama koje integrišu AI modele. Polaznici na ovaj čas dolaze sa već obučenim modelima i razvijenim prototipom aplikacije koja predstavlja njihovo projektno rešenje. Tokom termina analiziraju se prednosti i nedostaci pojedinih arhitektonskih rešenja, a polaznici dobijaju smernice za njihovo dalje unapređenje.",
-      "session13": "Završna diskusija i prezentacija projekata",
-      "session13_content": "Poslednji termin kursa posvećen je prezentaciji i evaluaciji projektnih rešenja. Polaznici prezentuju svoje aplikacije, a nastavnici ih komentarišu i ocenjuju."
+      "session11": "Arhitektura projektnog rešenja",
+      "session11_content": "Ovaj termin posvećen je ideaciji i konceptualnoj analizi projektnih rešenja. Tokom termina, timovi predstavljaju i obrazlažu svoj predlog arhitekture rešenja. Analiziraju se skupovi podataka koje polaznici smatraju relevantnim za razvoj svojih projekata. Posebna pažnja posvećena je diskusiji o dilemama na koje su timovi naišli tokom procesa ideacije. Sa termina polaznici odlaze sa odlukom o arhitekturi projekta i skupovima podataka koji će biti korišćeni.",
+      "session12": "AI model u projektnom rešenju",
+      "session12_content": "Ovaj termin je posvećen diskusiji o tehničkim rešenjima koja će biti primenjena u projektu. Polaznici predstavljaju predloge AI modela, dok im nastavnici pružaju povratne informacije o njihovoj primenjivosti, kao i o prednostima i nedostacima izabranih pristupa. Tokom termina se razrešavaju dileme na koje su polaznici naišli, tako da sa vežbi odlaze sa konačnom odlukom o AI modelima koje će implementirati u svom projektu.",
+      "session13": "Integralno projektno rešenje",
+      "session13_content": "Ovaj termin je posvećen diskusiji o softverskim aplikacijama koje integrišu AI modele. Polaznici na ovaj čas dolaze sa već obučenim modelima i razvijenim prototipom aplikacije koja predstavlja njihovo projektno rešenje. Tokom termina analiziraju se prednosti i nedostaci pojedinih arhitektonskih rešenja, a polaznici dobijaju smernice za njihovo dalje unapređenje.",
+      "session14": "Završna diskusija i prezentacija projekata",
+      "session14_content": "Poslednji termin kursa posvećen je prezentaciji i evaluaciji projektnih rešenja. Polaznici prezentuju svoje aplikacije, a nastavnici ih komentarišu i ocenjuju."
     }
   },
   "about": {
@@ -111,7 +113,6 @@ window.__translations__ = {
     "heading": "Kontakt",
     "infoTitle": "Kontaktirajte nas",
     "infoDesc": "Imate pitanja o kursu? Slobodno nas kontaktirajte putem forme ili direktno.",
-    "partner": "U saradnji sa FTN Novi Sad",
     "join": {
       "bold": "Pridruži se",
       "italic": "sledećoj grupi"
