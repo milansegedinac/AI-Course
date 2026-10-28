@@ -1,6 +1,6 @@
 window.__translations__ = {
   "meta": {
-    "title": "AI Course — Sokraft",
+    "title": "AI Course Sokraft",
     "description": "A hands-on AI engineering course covering machine learning, neural networks, LLMs, and autonomous AI agents."
   },
   "nav": {

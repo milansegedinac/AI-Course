@@ -1,6 +1,6 @@
 window.__translations__ = {
   "meta": {
-    "title": "AI Kurs — Sokraft",
+    "title": "AI Kurs Sokraft",
     "description": "Praktičan inženjerski AI kurs: mašinsko učenje, neuronske mreže, LLM-ovi i autonomni AI agenti."
   },
   "nav": {
