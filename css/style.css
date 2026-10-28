@@ -974,6 +974,7 @@ html.js .reveal.in-view{ opacity:1; transform:none; filter:none; }
 
 .form-submit{ margin-top:30px; min-width:220px; }
 .form.is-loading .form-submit{ opacity:.7; pointer-events:none; }
+.form-submit:disabled{ opacity:.45; cursor:not-allowed; transform:none; filter:none; }
 
 .form-success{
   margin-top:16px;
