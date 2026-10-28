@@ -25,7 +25,7 @@ window.__translations__ = {
     "sessions": { "num": "15", "label": "Termina" },
     "duration": { "num": "2h", "label": "Trajanje termina" },
     "months": { "num": "~2", "label": "Meseca" },
-    "start": { "num": "Jesen 2026", "label": "Početak sledećeg kursa" },
+    "start": { "num": "Početak 2027", "label": "Početak sledećeg kursa" },
     "price": { "num": "1200 €", "label": "Cena kursa" }
   },
   "courseSetup": {

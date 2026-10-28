@@ -25,7 +25,7 @@ window.__translations__ = {
     "sessions": { "num": "15", "label": "Sessions" },
     "duration": { "num": "2h", "label": "Per session" },
     "months": { "num": "~2", "label": "Months" },
-    "start": { "num": "Fall 2026", "label": "Next cohort" },
+    "start": { "num": "Early 2027", "label": "Next cohort" },
     "price": { "num": "1200 €", "label": "Course price" }
   },
   "courseSetup": {
